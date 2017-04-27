@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XAgent</name>
+    </assembly>
+    <members>
+        <member name="T:XAgent.AgentService">
+            <summary>代理服务例子。自定义服务程序可参照该类实现。</summary>
+        </member>
+        <member name="P:XAgent.AgentService.ThreadCount">
+            <summary>线程数</summary>
+        </member>
+        <member name="P:XAgent.AgentService.DisplayName">
+            <summary>显示名</summary>
+        </member>
+        <member name="P:XAgent.AgentService.Description">
+            <summary>描述</summary>
+        </member>
+        <member name="M:XAgent.AgentService.#ctor">
+            <summary>实例化一个代理服务</summary>
+        </member>
+        <member name="M:XAgent.AgentService.Work(System.Int32)">
+            <summary>核心工作方法。调度线程会定期调用该方法</summary>
+            <param name="index">线程序号</param>
+            <returns>是否立即开始下一步工作。某些任务能达到满负荷，线程可以不做等待</returns>
+        </member>
+        <member name="T:XAgent.AgentServiceBase`1">
+            <summary>服务程序基类</summary>
+            <typeparam name="TService">服务类型</typeparam>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.ServiceMain">
+            <summary>服务主函数</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.ShowStatus">
+            <summary>显示状态</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.ShowMenu">
+            <summary>显示菜单</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase`1.Threads">
+            <summary>线程组</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase`1.AttachServers">
+            <summary>附加服务</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.OnStart(System.String[])">
+            <summary>服务启动事件</summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.OnStop">
+            <summary>服务停止事件</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.Dispose(System.Boolean)">
+            <summary>销毁资源</summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.StartWork">
+            <summary>开始循环工作</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.StartWork(System.Int32)">
+            <summary>开始循环工作</summary>
+            <param name="index">线程序号</param>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.workWaper(System.Object)">
+            <summary>线程包装</summary>
+            <param name="data">线程序号</param>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.Work(System.Int32)">
+            <summary>核心工作方法。调度线程会定期调用该方法</summary>
+            <param name="index">线程序号</param>
+            <returns>是否立即开始下一步工作。某些任务能达到满负荷，线程可以不做等待</returns>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.StopWork">
+            <summary>
+            停止循环工作。
+            只能停止循环而已，如果已经有一批任务在处理，
+            则内部需要捕获ThreadAbortException异常，否则无法停止任务处理。
+            </summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.StopWork(System.Int32)">
+            <summary>停止循环工作</summary>
+            <param name="index">线程序号</param>
+        </member>
+        <member name="F:XAgent.AgentServiceBase`1.ManagerThread">
+            <summary>服务管理线程</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.StartManagerThread">
+            <summary>开始服务管理线程</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.StopManagerThread">
+            <summary>停止服务管理线程</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.ManagerThreadWaper(System.Object)">
+            <summary>服务管理线程封装</summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:XAgent.AgentServiceBase`1.Active">
+            <summary>活动时间</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.CheckActive">
+            <summary>检查是否有工作线程死亡</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.CheckMemory">
+            <summary>检查内存是否超标</summary>
+            <returns>是否超标重启</returns>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.CheckThread">
+            <summary>检查服务进程的总线程数是否超标</summary>
+            <returns></returns>
+        </member>
+        <member name="F:XAgent.AgentServiceBase`1.Start">
+            <summary>服务开始时间</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.CheckAutoRestart">
+            <summary>检查自动重启</summary>
+            <returns></returns>
+        </member>
+        <member name="F:XAgent.AgentServiceBase`1.IsShutdowning">
+            <summary>是否正在重启</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.RestartService">
+            <summary>重启服务</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase`1.WatchDogs">
+            <summary>看门狗要保护的服务</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase`1.CheckWatchDog">
+            <summary>检查看门狗。</summary>
+            <remarks>
+            XAgent看门狗功能由管理线程完成，每分钟一次。
+            检查指定的任务是否已经停止，如果已经停止，则启动它。
+            </remarks>
+        </member>
+        <member name="T:XAgent.AgentServiceBase">
+            <summary>服务程序基类</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase.DisplayName">
+            <summary>显示名</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase.Description">
+            <summary>描述</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase.ThreadCount">
+            <summary>线程数</summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase.ThreadNames">
+            <summary>线程名</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase.#ctor">
+            <summary>初始化</summary>
+        </member>
+        <member name="F:XAgent.AgentServiceBase._Instance">
+            <summary></summary>
+        </member>
+        <member name="P:XAgent.AgentServiceBase.Instance">
+            <summary>服务实例。每个应用程序域只有一个服务实例</summary>
+        </member>
+        <member name="M:XAgent.AgentServiceBase.WriteLine(System.String,System.Object[])">
+            <summary>写日志</summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:XAgent.AgentServiceBase.WriteLine(System.String)">
+            <summary>写日志</summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:XAgent.FrmMain">
+            <summary>服务主界面</summary>
+        </member>
+        <member name="M:XAgent.FrmMain.#ctor">
+            <summary>初始化</summary>
+        </member>
+        <member name="F:XAgent.FrmMain.components">
+            <summary>Required designer variable.</summary>
+        </member>
+        <member name="M:XAgent.FrmMain.Dispose(System.Boolean)">
+            <summary>Clean up any resources being used.</summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XAgent.FrmMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:XAgent.IAgentService">
+            <summary>代理服务接口</summary>
+        </member>
+        <member name="P:XAgent.IAgentService.ServiceName">
+            <summary>服务名</summary>
+        </member>
+        <member name="P:XAgent.IAgentService.DisplayName">
+            <summary>显示名</summary>
+        </member>
+        <member name="P:XAgent.IAgentService.Description">
+            <summary>服务描述</summary>
+        </member>
+        <member name="T:XAgent.Interactive">
+            <summary>用户界面交互</summary>
+        </member>
+        <member name="P:XAgent.Interactive.MainForm">
+            <summary>主窗口</summary>
+        </member>
+        <member name="M:XAgent.Interactive.Hide">
+            <summary>隐藏</summary>
+        </member>
+        <member name="M:XAgent.Interactive.ShowForm">
+            <summary>显示窗体</summary>
+        </member>
+        <member name="T:XAgent.ServiceControl">
+            <summary>
+            服务控制器
+            </summary>
+        </member>
+        <member name="M:XAgent.ServiceControl.Install(System.Boolean,System.String,System.String,System.String,System.String)">
+            <summary>安装、卸载 服务</summary>
+            <param name="isinstall">是否安装</param>
+            <param name="exeName"></param>
+            <param name="displayName"></param>
+            <param name="description"></param>
+            <param name="dir"></param>
+        </member>
+        <member name="M:XAgent.ServiceControl.ControlService(System.Boolean,System.String)">
+            <summary>启动、停止 服务</summary>
+            <param name="isstart"></param>
+            <param name="serviceName"></param>
+        </member>
+        <member name="M:XAgent.ServiceControl.RunCmd(System.String,System.Boolean,System.Boolean)">
+            <summary>执行一个命令</summary>
+            <param name="cmd"></param>
+            <param name="showWindow"></param>
+            <param name="waitForExit"></param>
+        </member>
+        <member name="M:XAgent.ServiceControl.RunSC(System.String)">
+            <summary>执行SC命令</summary>
+            <param name="cmd"></param>
+        </member>
+        <member name="M:XAgent.ServiceControl.GetDependentServices(System.String)">
+            <summary>获取依赖于<paramref name="serviceName"/>实例的服务</summary>
+            <param name="serviceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XAgent.ServiceControl.GetDependentServiceNames(System.String)">
+            <summary>获取依赖于<paramref name="serviceName"/>实例的服务名称</summary>
+            <param name="serviceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XAgent.ServiceControl.WriteLine(System.String)">
+            <summary>写日志</summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:XAgent.ServiceHelper">
+            <summary>服务助手</summary>
+        </member>
+        <member name="P:XAgent.ServiceHelper.ExeName">
+            <summary>Exe程序名</summary>
+        </member>
+        <member name="M:XAgent.ServiceHelper.Install(XAgent.IAgentService,System.Boolean)">
+            <summary>安装、卸载 服务</summary>
+            <param name="service">服务对象</param>
+            <param name="isinstall">是否安装</param>
+        </member>
+        <member name="M:XAgent.ServiceHelper.ControlService(XAgent.IAgentService,System.Boolean)">
+            <summary>启动、停止 服务</summary>
+            <param name="service">服务对象</param>
+            <param name="isstart"></param>
+        </member>
+        <member name="M:XAgent.ServiceHelper.RunCmd(System.String,System.Boolean,System.Boolean)">
+            <summary>执行一个命令</summary>
+            <param name="cmd"></param>
+            <param name="showWindow"></param>
+            <param name="waitForExit"></param>
+        </member>
+        <member name="M:XAgent.ServiceHelper.RunSC(System.String)">
+            <summary>执行SC命令</summary>
+            <param name="cmd"></param>
+        </member>
+        <member name="M:XAgent.ServiceHelper.IsInstalled(XAgent.IAgentService)">
+            <summary>是否已安装</summary>
+        </member>
+        <member name="M:XAgent.ServiceHelper.IsRunning(XAgent.IAgentService)">
+            <summary>是否已启动</summary>
+        </member>
+        <member name="M:XAgent.ServiceHelper.GetService(System.String)">
+            <summary>取得服务</summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XAgent.ServiceHelper.IsServiceInstalled(System.String)">
+            <summary>是否已安装</summary>
+        </member>
+        <member name="M:XAgent.ServiceHelper.IsServiceRunning(System.String)">
+            <summary>是否已启动</summary>
+        </member>
+        <member name="M:XAgent.ServiceHelper.PreStartWork(XAgent.IAgentService)">
+            <summary>启动服务准备工作</summary>
+        </member>
+        <member name="M:XAgent.ServiceHelper.WriteLine(System.String,System.Object[])">
+            <summary>写日志</summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:XAgent.ServiceHelper.WriteLine(System.String)">
+            <summary>写日志</summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:XAgent.Setting">
+            <summary>服务设置</summary>
+        </member>
+        <member name="P:XAgent.Setting.Debug">
+            <summary>是否启用全局调试。默认为不启用</summary>
+        </member>
+        <member name="P:XAgent.Setting.ServiceName">
+            <summary>服务名</summary>
+        </member>
+        <member name="P:XAgent.Setting.DisplayName">
+            <summary>显示名</summary>
+        </member>
+        <member name="P:XAgent.Setting.Description">
+            <summary>服务描述</summary>
+        </member>
+        <member name="P:XAgent.Setting.Intervals">
+            <summary>工作线程间隔，单位：秒。不同工作线程的时间间隔用逗号或分号隔开。可以通过设置任务的时间间隔小于0来关闭指定任务</summary>
+        </member>
+        <member name="P:XAgent.Setting.MaxActive">
+            <summary>最大活动时间，单位：秒。超过最大活动时间都还没有响应的线程将会被重启，防止线程执行时间过长。默认0秒，表示无限</summary>
+        </member>
+        <member name="P:XAgent.Setting.MaxMemory">
+            <summary>最大占用内存，单位： M。超过最大占用时，整个服务进程将会重启，以释放资源。默认0秒，表示无限</summary>
+        </member>
+        <member name="P:XAgent.Setting.MaxThread">
+            <summary>最大总线程数，单位：个。超过最大占用时，整个服务进程将会重启，以释放资源。默认0个，表示无限</summary>
+        </member>
+        <member name="P:XAgent.Setting.AutoRestart">
+            <summary>自动重启时间，单位：分。到达自动重启时间时，整个服务进程将会重启，以释放资源。默认0分，表示无限</summary>
+        </member>
+        <member name="P:XAgent.Setting.WatchDog">
+            <summary>看门狗，保护其它服务，每分钟检查一次。多个服务名逗号分隔</summary>
+        </member>
+        <member name="M:XAgent.Setting.OnNew">
+            <summary>新建时调用</summary>
+        </member>
+    </members>
+</doc>

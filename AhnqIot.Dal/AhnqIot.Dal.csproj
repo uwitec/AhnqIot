@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E74E521-C201-46C5-B9B0-51A0B01BDCBA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AhnqIot.Dal</RootNamespace>
+    <AssemblyName>AhnqIot.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NewLife.Core">
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XCode">
+      <HintPath>..\libs\newlife\XCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Biz\AgrDiagnosticInfo.Biz.cs" />
+    <Compile Include="Biz\AgrDiagnosticModel.Biz.cs" />
+    <Compile Include="Biz\AgrProduceAnniversaryService.Biz.cs" />
+    <Compile Include="Biz\AgrProduceCondition.Biz.cs" />
+    <Compile Include="Biz\AgrProductObject.Biz.cs" />
+    <Compile Include="Biz\AgrProductObjectGrowthInfo.Biz.cs" />
+    <Compile Include="Biz\AreaStation.Biz.cs" />
+    <Compile Include="Biz\AreaStationDataInfo.Biz.cs" />
+    <Compile Include="Biz\ArticleCategory.Biz.cs" />
+    <Compile Include="Biz\ArticleContent.Biz.cs" />
+    <Compile Include="Biz\AWProduct.Biz.cs" />
+    <Compile Include="Biz\AWProductType.Biz.cs" />
+    <Compile Include="Biz\CameraStationOnlineStatistics.Biz.cs" />
+    <Compile Include="Biz\CameraStationPics.Biz.cs" />
+    <Compile Include="Biz\CameraStationPresetPoint.Biz.cs" />
+    <Compile Include="Biz\CameraStationRunLog.Biz.cs" />
+    <Compile Include="Biz\CameraStations.Biz.cs" />
+    <Compile Include="Biz\Categories.Biz.cs" />
+    <Compile Include="Biz\CHANNEL_MAP.Biz.cs" />
+    <Compile Include="Biz\Company.Biz.cs" />
+    <Compile Include="Biz\CompanyPics.Biz.cs" />
+    <Compile Include="Biz\CompanyUser.Biz.cs" />
+    <Compile Include="Biz\CONTENT_LIST.Biz.cs" />
+    <Compile Include="Biz\Device.Biz.cs" />
+    <Compile Include="Biz\DeviceControlCommand.Biz.cs" />
+    <Compile Include="Biz\DeviceControlLog.Biz.cs" />
+    <Compile Include="Biz\DeviceDataExceptionLog.Biz.cs" />
+    <Compile Include="Biz\DeviceDataInfo.Biz.cs" />
+    <Compile Include="Biz\DeviceExceptionSet.Biz.cs" />
+    <Compile Include="Biz\DeviceRunLog.Biz.cs" />
+    <Compile Include="Biz\DeviceRunLogType.Biz.cs" />
+    <Compile Include="Biz\DeviceRunningStatistics.Biz.cs" />
+    <Compile Include="Biz\DeviceTimeSharingStatistics.Biz.cs" />
+    <Compile Include="Biz\DeviceType.Biz.cs" />
+    <Compile Include="Biz\ExceptionSms.Biz.cs" />
+    <Compile Include="Biz\Facility.Biz.cs" />
+    <Compile Include="Biz\FacilityCamera.Biz.cs" />
+    <Compile Include="Biz\FacilityCameraPresetPoint.Biz.cs" />
+    <Compile Include="Biz\FacilityCameraRunLog.Biz.cs" />
+    <Compile Include="Biz\FacilityCameraRunStatistics.Biz.cs" />
+    <Compile Include="Biz\FacilityPics.Biz.cs" />
+    <Compile Include="Biz\FacilityProduceInfo.Biz.cs" />
+    <Compile Include="Biz\FacilityType.Biz.cs" />
+    <Compile Include="Biz\Farm.Biz.cs" />
+    <Compile Include="Biz\Log.Biz.cs" />
+    <Compile Include="Biz\NewClassByContent.Biz.cs" />
+    <Compile Include="Biz\PictureRep.Biz.cs" />
+    <Compile Include="Biz\SysArea.Biz.cs" />
+    <Compile Include="Biz\SysDepartment.Biz.cs" />
+    <Compile Include="Biz\SysFunction.Biz.cs" />
+    <Compile Include="Biz\SysMenu.Biz.cs" />
+    <Compile Include="Biz\SysRole.Biz.cs" />
+    <Compile Include="Biz\SysRoleMenu.Biz.cs" />
+    <Compile Include="Biz\SysUser.Biz.cs" />
+    <Compile Include="Biz\WeatherDevice.Biz.cs" />
+    <Compile Include="Biz\WeatherDeviceType.Biz.cs" />
+    <Compile Include="Biz\WeatherStation.Biz.cs" />
+    <Compile Include="Biz\WeatherStationOnlineStatistics.Biz.cs" />
+    <Compile Include="Biz\WeatherWarn.Biz.cs" />
+    <Compile Include="Ext\AgrDiagnosticInfo.Ext.cs" />
+    <Compile Include="Ext\AgrDiagnosticModel.Ext.cs" />
+    <Compile Include="Ext\AgrProduceAnniversaryService.Ext.cs" />
+    <Compile Include="Ext\AgrProduceCondition.Ext.cs" />
+    <Compile Include="Ext\AgrProductObject.Ext.cs" />
+    <Compile Include="Ext\AgrProductObjectGrowthInfo.Ext.cs" />
+    <Compile Include="Ext\AreaStation.Ext.cs" />
+    <Compile Include="Ext\AreaStationDataInfo.Ext.cs" />
+    <Compile Include="Ext\ArticleCategory.Ext.cs" />
+    <Compile Include="Ext\ArticleContent.Ext.cs" />
+    <Compile Include="Ext\AWProduct.Ext.cs" />
+    <Compile Include="Ext\AWProductType.Ext.cs" />
+    <Compile Include="Ext\CameraStationOnlineStatistics.Ext.cs" />
+    <Compile Include="Ext\CameraStationPics.Ext.cs" />
+    <Compile Include="Ext\CameraStationPresetPoint.Ext.cs" />
+    <Compile Include="Ext\CameraStationRunLog.Ext.cs" />
+    <Compile Include="Ext\CameraStations.Ext.cs" />
+    <Compile Include="Ext\Categories.Ext.cs" />
+    <Compile Include="Ext\CHANNEL_MAP.Ext.cs" />
+    <Compile Include="Ext\Company.Ext.cs" />
+    <Compile Include="Ext\CompanyPics.Ext.cs" />
+    <Compile Include="Ext\CompanyUser.Ext.cs" />
+    <Compile Include="Ext\CONTENT_LIST.Ext.cs" />
+    <Compile Include="Ext\Device.Ext.cs" />
+    <Compile Include="Ext\DeviceControlCommand.Ext.cs" />
+    <Compile Include="Ext\DeviceControlLog.Ext.cs" />
+    <Compile Include="Ext\DeviceDataExceptionLog.Ext.cs" />
+    <Compile Include="Ext\DeviceDataInfo.Ext.cs" />
+    <Compile Include="Ext\DeviceExceptionSet.Ext.cs" />
+    <Compile Include="Ext\DeviceRunLog.Ext.cs" />
+    <Compile Include="Ext\DeviceRunLogType.Ext.cs" />
+    <Compile Include="Ext\DeviceRunningStatistics.Ext.cs" />
+    <Compile Include="Ext\DeviceTimeSharingStatistics.Ext.cs" />
+    <Compile Include="Ext\DeviceType.Ext.cs" />
+    <Compile Include="Ext\ExceptionSms.Ext.cs" />
+    <Compile Include="Ext\Facility.Ext.cs" />
+    <Compile Include="Ext\FacilityCamera.Ext.cs" />
+    <Compile Include="Ext\FacilityCameraPresetPoint.Ext.cs" />
+    <Compile Include="Ext\FacilityCameraRunLog.Ext.cs" />
+    <Compile Include="Ext\FacilityCameraRunStatistics.Ext.cs" />
+    <Compile Include="Ext\FacilityPics.Ext.cs" />
+    <Compile Include="Ext\FacilityProduceInfo.Ext.cs" />
+    <Compile Include="Ext\FacilityType.Ext.cs" />
+    <Compile Include="Ext\Farm.Ext.cs" />
+    <Compile Include="Ext\Log.Ext.cs" />
+    <Compile Include="Ext\NewClassByContent.Ext.cs" />
+    <Compile Include="Ext\PictureRep.Ext.cs" />
+    <Compile Include="Ext\SysArea.Ext.cs" />
+    <Compile Include="Ext\SysDepartment.Ext.cs" />
+    <Compile Include="Ext\SysFunction.Ext.cs" />
+    <Compile Include="Ext\SysMenu.Ext.cs" />
+    <Compile Include="Ext\SysRole.Ext.cs" />
+    <Compile Include="Ext\SysRoleMenu.Ext.cs" />
+    <Compile Include="Ext\SysUser.Ext.cs" />
+    <Compile Include="Ext\WeatherDevice.Ext.cs" />
+    <Compile Include="Ext\WeatherDeviceType.Ext.cs" />
+    <Compile Include="Ext\WeatherStation.Ext.cs" />
+    <Compile Include="Ext\WeatherStationOnlineStatistics.Ext.cs" />
+    <Compile Include="Ext\WeatherWarn.Ext.cs" />
+    <Compile Include="Model\AgrDiagnosticInfo.cs" />
+    <Compile Include="Model\AgrDiagnosticModel.cs" />
+    <Compile Include="Model\AgrProduceAnniversaryService.cs" />
+    <Compile Include="Model\AgrProduceCondition.cs" />
+    <Compile Include="Model\AgrProductObject.cs" />
+    <Compile Include="Model\AgrProductObjectGrowthInfo.cs" />
+    <Compile Include="Model\AreaStation.cs" />
+    <Compile Include="Model\AreaStationDataInfo.cs" />
+    <Compile Include="Model\ArticleCategory.cs" />
+    <Compile Include="Model\ArticleContent.cs" />
+    <Compile Include="Model\AWProduct.cs" />
+    <Compile Include="Model\AWProductType.cs" />
+    <Compile Include="Model\CameraStationOnlineStatistics.cs" />
+    <Compile Include="Model\CameraStationPics.cs" />
+    <Compile Include="Model\CameraStationPresetPoint.cs" />
+    <Compile Include="Model\CameraStationRunLog.cs" />
+    <Compile Include="Model\CameraStations.cs" />
+    <Compile Include="Model\Categories.cs" />
+    <Compile Include="Model\CHANNEL_MAP.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\CompanyPics.cs" />
+    <Compile Include="Model\CompanyUser.cs" />
+    <Compile Include="Model\CONTENT_LIST.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\DeviceControlCommand.cs" />
+    <Compile Include="Model\DeviceControlLog.cs" />
+    <Compile Include="Model\DeviceDataExceptionLog.cs" />
+    <Compile Include="Model\DeviceDataInfo.cs" />
+    <Compile Include="Model\DeviceExceptionSet.cs" />
+    <Compile Include="Model\DeviceRunLog.cs" />
+    <Compile Include="Model\DeviceRunLogType.cs" />
+    <Compile Include="Model\DeviceRunningStatistics.cs" />
+    <Compile Include="Model\DeviceTimeSharingStatistics.cs" />
+    <Compile Include="Model\DeviceType.cs" />
+    <Compile Include="Model\ExceptionSms.cs" />
+    <Compile Include="Model\Facility.cs" />
+    <Compile Include="Model\FacilityCamera.cs" />
+    <Compile Include="Model\FacilityCameraPresetPoint.cs" />
+    <Compile Include="Model\FacilityCameraRunLog.cs" />
+    <Compile Include="Model\FacilityCameraRunStatistics.cs" />
+    <Compile Include="Model\FacilityPics.cs" />
+    <Compile Include="Model\FacilityProduceInfo.cs" />
+    <Compile Include="Model\FacilityType.cs" />
+    <Compile Include="Model\Farm.cs" />
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\NewClassByContent.cs" />
+    <Compile Include="Model\PictureRep.cs" />
+    <Compile Include="Model\SysArea.cs" />
+    <Compile Include="Model\SysDepartment.cs" />
+    <Compile Include="Model\SysFunction.cs" />
+    <Compile Include="Model\SysMenu.cs" />
+    <Compile Include="Model\SysRole.cs" />
+    <Compile Include="Model\SysRoleMenu.cs" />
+    <Compile Include="Model\SysUser.cs" />
+    <Compile Include="Model\WeatherDevice.cs" />
+    <Compile Include="Model\WeatherDeviceType.cs" />
+    <Compile Include="Model\WeatherStation.cs" />
+    <Compile Include="Model\WeatherStationOnlineStatistics.cs" />
+    <Compile Include="Model\WeatherWarn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

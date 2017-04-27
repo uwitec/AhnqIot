@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA66CFFD-4F4B-4D58-9716-0C9EC9D4AC05}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AhnqIot.CameraStationDataProcess</RootNamespace>
+    <AssemblyName>AhnqIot.CameraStationDataProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AhnqIot.Dto">
+      <HintPath>..\AhnqIot.Dto\bin\Debug\AhnqIot.Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NewLife.Core">
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XAgent">
+      <HintPath>..\libs\newlife\XAgent.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CameraDeviceJob.cs" />
+    <Compile Include="CameraDeviceJobService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AhnqIot.Bussiness\AhnqIot.Bussiness.csproj">
+      <Project>{92cde430-8bc7-4ac7-a3ba-1aabf9f653f8}</Project>
+      <Name>AhnqIot.Bussiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AhnqIot.DataProcess.Service.Core\AhnqIot.DataProcess.Service.Core.csproj">
+      <Project>{6a5a99ca-e1eb-459e-b65d-d04b2dea3305}</Project>
+      <Name>AhnqIot.DataProcess.Service.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AhnqIot.Infrastructure\AhnqIot.Infrastructure.csproj">
+      <Project>{9dcb9c9c-881f-457b-80e0-76054f75a9c9}</Project>
+      <Name>AhnqIot.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartIot.Camera.Hikvision\SmartIot.Service.Hikvision.csproj">
+      <Project>{db8bd2b6-ba13-42f5-81df-5110efd76ba9}</Project>
+      <Name>SmartIot.Service.Hikvision</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartIot.Service.Core\SmartIot.Service.Core.csproj">
+      <Project>{04b0b6c9-4656-4e14-ad61-d5ec47d8bbb8}</Project>
+      <Name>SmartIot.Service.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

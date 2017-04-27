@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A53E555-52D8-4101-AD45-ADA2E0B7554D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AhnqIot.Dto</RootNamespace>
+    <AssemblyName>AhnqIot.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgrDiagnosticInfoDto.cs" />
+    <Compile Include="AgrDiagnosticModelDto.cs" />
+    <Compile Include="AgrProduceAnniversaryServiceDto.cs" />
+    <Compile Include="AgrProduceConditionDto.cs" />
+    <Compile Include="AgrProductObjectDto.cs" />
+    <Compile Include="AgrProductObjectGrowthInfoDto.cs" />
+    <Compile Include="AreaStationDataInfoDto.cs" />
+    <Compile Include="AreaStationDto.cs" />
+    <Compile Include="AWProductDto.cs" />
+    <Compile Include="AWProductTypeDto.cs" />
+    <Compile Include="BaseDto.cs" />
+    <Compile Include="CameraStationOnlineStatisticsDto.cs" />
+    <Compile Include="CameraStationPicsDto.cs" />
+    <Compile Include="CameraStationPresetPointDto.cs" />
+    <Compile Include="CameraStationRunLogDto.cs" />
+    <Compile Include="CameraStationsDto.cs" />
+    <Compile Include="CompanyDto.cs" />
+    <Compile Include="CompanyPicsDto.cs" />
+    <Compile Include="CompanyUserDto.cs" />
+    <Compile Include="DeviceControlCommandDto.cs" />
+    <Compile Include="DeviceControlLogDto.cs" />
+    <Compile Include="DeviceDataExceptionLogDto.cs" />
+    <Compile Include="DeviceDataInfoDto.cs" />
+    <Compile Include="DeviceDto.cs" />
+    <Compile Include="DeviceExceptionSetDto.cs" />
+    <Compile Include="DeviceRunLogDto.cs" />
+    <Compile Include="DeviceRunLogTypeDto.cs" />
+    <Compile Include="DeviceRunningStatisticsDto.cs" />
+    <Compile Include="DeviceTimeSharingStatisticsDto.cs" />
+    <Compile Include="DeviceTypeDto.cs" />
+    <Compile Include="FacilityCameraDto.cs" />
+    <Compile Include="FacilityCameraPresetPointDto.cs" />
+    <Compile Include="FacilityCameraRunLogDto.cs" />
+    <Compile Include="FacilityCameraRunStatisticsDto.cs" />
+    <Compile Include="FacilityDto.cs" />
+    <Compile Include="FacilityPicsDto.cs" />
+    <Compile Include="FacilityProduceInfoDto.cs" />
+    <Compile Include="FacilityTypeDto.cs" />
+    <Compile Include="FarmDto.cs" />
+    <Compile Include="PictureRepDto.cs" />
+    <Compile Include="SysAreaDto.cs" />
+    <Compile Include="SysDepartmentDto.cs" />
+    <Compile Include="SysMenuDto.cs" />
+    <Compile Include="SysRoleDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysRoleFunction.cs" />
+    <Compile Include="SysRoleMenuDto.cs" />
+    <Compile Include="SysUserDto.cs" />
+    <Compile Include="WeatherDeviceDto.cs" />
+    <Compile Include="WeatherDeviceTypeDto.cs" />
+    <Compile Include="WeatherStationDto.cs" />
+    <Compile Include="WeatherStationOnlineStatisticsDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

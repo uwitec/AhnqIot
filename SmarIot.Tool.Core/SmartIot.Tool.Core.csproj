@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6F031D8-1934-4E0F-A83B-8C42D840827F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartIot.Tool.Core</RootNamespace>
+    <AssemblyName>SmartIot.Tool.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NewLife.Core">
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NewLife.Net">
+      <HintPath>..\libs\newlife\NewLife.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Setting.cs" />
+    <Compile Include="DataSync\IDataSync.cs" />
+    <Compile Include="Device\AlarmDevice\IAlarmDevice.cs" />
+    <Compile Include="Device\Camera\ICameraDevice.cs" />
+    <Compile Include="Device\CollectDevice\ICollectDevice.cs" />
+    <Compile Include="Device\CollectDevice\ModbusCollectDevice.cs" />
+    <Compile Include="Device\ControlDevice\IControlDevice.cs" />
+    <Compile Include="Device\ControlDevice\ModbusControlDevice.cs" />
+    <Compile Include="Device\DeviceBase.cs" />
+    <Compile Include="Device\LedDevice\ILedDevice.cs" />
+    <Compile Include="Device\LedDevice\LedDeviceFactory.cs" />
+    <Compile Include="Device\LedDevice\LedDeviceTypeEnum.cs" />
+    <Compile Include="Device\LedDevice\LXLed\LXDevice.cs" />
+    <Compile Include="Device\LedDevice\LXLed\Led2014.cs" />
+    <Compile Include="Device\LedDevice\LXLed\LedHelper.cs" />
+    <Compile Include="Device\LedDevice\YXTD\LedAccess.cs" />
+    <Compile Include="Device\LedDevice\YXTD\YXTDNew.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\Check.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\Close.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\Helper.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\LedEnum.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\Open.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\SendRam.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\SendRom.cs" />
+    <Compile Include="Device\LedDevice\YXTW103\YXTW103Device.cs" />
+    <Compile Include="Device\Transport\TransportTypeEnum.cs" />
+    <Compile Include="Device\Transport\TransportFactory.cs" />
+    <Compile Include="Device\TtsDevice\ITtsDevice.cs" />
+    <Compile Include="Device\TtsDevice\KdxfDevice.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\InitOKResponse.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\Interface.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\PauseSpeechSynthesis.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\PowerDown.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\ResumeSpeechSynthesis.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SpeechSynthesis.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SpeechSynthesisFailResponse.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SpeechSynthesisOKResponse.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SpeechSynthesisStop.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SystemBusy.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SystemIdle.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\SystemView.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\TtsEntity.cs" />
+    <Compile Include="Device\TtsDevice\KdxfProtocal\TtsFunction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Device\LedDevice\YXTD\pArmSendQt.dll调用说明.doc" />
+    <None Include="Device\LedDevice\YXTD\pArmSendQt.lib" />
+    <None Include="Device\TtsDevice\KdxfProtocal\ClassDiagram1.cd" />
+    <None Include="Device\TtsDevice\KdxfProtocal\文档\XF-S4240中文语音合成模块开发指南.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Device\LedDevice\YXTD\pArmSendQt.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartIot.Api.Protocal\SmartIot.Api.Protocal.csproj">
+      <Project>{50506061-8666-4077-8a75-ce2395538e77}</Project>
+      <Name>SmartIot.Api.Protocal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

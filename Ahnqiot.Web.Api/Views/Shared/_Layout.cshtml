@@ -1,0 +1,26 @@
+﻿@using Ahnqiot.Web.Api.Providers.ConfigInfo
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--IE 浏览器运行最新的渲染模式下-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--高速模式    -->
+    <meta name="renderer" content="webkit">
+    <title>@WebConfig.Current.SystemName</title>
+    <link rel="shortcut icon" href="@WebConfig.Current.UrlInfo.Favicon" />
+</head>
+<body>
+    <div style="display: none;"><h1><a href="@WebConfig.Current.CompanyHref" target="_blank">技术支持：@WebConfig.Current.CompanyName</a></h1></div>
+    <div class="container-layout">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <!--[if lte IE 8]>
+        @Scripts.Render("~/bundles/lte ie8")
+    <![endif]-->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

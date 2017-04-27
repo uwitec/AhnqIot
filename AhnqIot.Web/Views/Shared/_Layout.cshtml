@@ -1,0 +1,46 @@
+﻿@using AhnqIot.Web.Core.ConfigInfo
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--IE 浏览器运行最新的渲染模式下-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--高速模式    -->
+    <meta name="renderer" content="webkit">
+    <title>@WebConfig.Current.SystemName</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/plugins/pintuer")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" href="@WebConfig.Current.UrlInfo.Favicon" />
+</head>
+<body>
+    <div style="display: none;"><h1><a href="@WebConfig.Current.CompanyHref" target="_blank">技术支持：@WebConfig.Current.CompanyName</a></h1></div>
+    <div class="container-layout">
+        <div class="nav">
+            @Html.Partial("_Nav")
+        </div>
+        <div class="main">
+            <div class="main-left">@Html.Partial("_LeftMenu")</div>
+            <div class="main-right">
+                <div class="main-content">
+                    <div class="content-bread">@Html.Partial("_Bread")</div>
+                    <div class="content-main">
+                        @RenderBody()
+                    </div>
+                </div>
+                <div class="copyright">
+                    @Html.Partial("_Copyright")
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/avalon")
+    @Scripts.Render("~/plugins/pintuer")
+    <!--[if lte IE 8]>
+        @Scripts.Render("~/bundles/lte ie8")
+    <![endif]-->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,3823 @@
+﻿﻿<style type="text/css">
+<!--
+.caption td {
+    border:1px solid #666666;
+    font-weight:bold;
+    background-color: #CCCCCC;
+}
+.dbtable {
+    border:1px solid #666666;
+}
+.dbbody td {
+    border:1px solid #666666;
+}
+-->
+</style>
+由soft-cq/CQ-PC生成于：2015-10-08 18:40:51 <BR />
+
+Camera：
+<strong>摄像机 （Camera）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>登录用户名 </td>
+    <td>UserID</td>
+    <td>UserID</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td>admin </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>登录密码 </td>
+    <td>UserPwd</td>
+    <td>UserPwd</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>地址 </td>
+    <td>CameraHost</td>
+    <td>CameraHost</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td>192.168.1.64 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>web端口号 </td>
+    <td>CameraHttpPort</td>
+    <td>CameraHttpPort</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>80 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>数据端口号 </td>
+    <td>CameraDataPort</td>
+    <td>CameraDataPort</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>8000 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>数据端口号 </td>
+    <td>CameraRTSPPort</td>
+    <td>CameraRTSPPort</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>554 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>通道 </td>
+    <td>Channel</td>
+    <td>Channel</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>1 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>流媒体地址 </td>
+    <td>StreamMedia</td>
+    <td>StreamMedia</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>厂家 </td>
+    <td>Company</td>
+    <td>Company</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td>海康威视 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>状态 </td>
+    <td>OnlineStatus</td>
+    <td>OnlineStatus</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>异常 </td>
+    <td>Exception</td>
+    <td>Exception</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+CameraPresetPoint：
+<strong>摄像机预置点 （CameraPresetPoint）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>预置点名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>预置点位置 </td>
+    <td>PresetPoint</td>
+    <td>PresetPoint</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设施摄像机 </td>
+    <td>FacilityCameraID</td>
+    <td>FacilityCameraID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+CommunicateDevice：
+<strong>通讯设备 （CommunicateDevice）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>通讯设备类型 </td>
+    <td>CommunicateDeviceTypeID</td>
+    <td>CommunicateDeviceTypeID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>参数1 </td>
+    <td>Args1</td>
+    <td>Args1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>参数2 </td>
+    <td>Args2</td>
+    <td>Args2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>参数3 </td>
+    <td>Args3</td>
+    <td>Args3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>参数4 </td>
+    <td>Args4</td>
+    <td>Args4</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>参数5 </td>
+    <td>Args5</td>
+    <td>Args5</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>状态 </td>
+    <td>OnlineStatus</td>
+    <td>OnlineStatus</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>异常 </td>
+    <td>Exception</td>
+    <td>Exception</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>1000</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+CommunicateDeviceType：
+<strong>通讯设备类型 （CommunicateDeviceType）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>1000</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ControlDeviceUnit：
+<strong>控制设备 （ControlDeviceUnit）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>模块化设备 </td>
+    <td>ModularDeviceID</td>
+    <td>ModularDeviceID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备类型 </td>
+    <td>DeviceTypeSerialnum</td>
+    <td>DeviceTypeSerialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>功能码 </td>
+    <td>Function</td>
+    <td>Function</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>组合设备 </td>
+    <td>IsComposite</td>
+    <td>IsComposite</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>寄存器地址十进制 </td>
+    <td>RegisterAddress1</td>
+    <td>RegisterAddress1</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td>寄存器地址(十进制) </td>
+  </tr>
+  <tr class="dbbody">
+    <td>超始地址 </td>
+    <td>RegisterAddress1Name</td>
+    <td>RegisterAddress1Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>寄存器地址十进制 </td>
+    <td>RegisterAddress2</td>
+    <td>RegisterAddress2</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td>寄存器地址(十进制) </td>
+  </tr>
+  <tr class="dbbody">
+    <td>结束地址 </td>
+    <td>RegisterAddress2Name</td>
+    <td>RegisterAddress2Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>原始值 </td>
+    <td>OriginalValue</td>
+    <td>OriginalValue</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备状态 </td>
+    <td>ProcessedValue</td>
+    <td>ProcessedValue</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+DeviceControlCommand：
+<strong>控制指令 （DeviceControlCommand）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>控制设备 </td>
+    <td>ControlDeviceUnitID</td>
+    <td>ControlDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>指令内容 </td>
+    <td>Command</td>
+    <td>Command</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>控制指令执行的时间长度，单位秒，0为不自动结束控制 </td>
+    <td>ControlContinueTime</td>
+    <td>ControlContinueTime</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>0为未执行，1为正在执行，2执行成功，4为执行失败，8为指令过期 </td>
+    <td>Status</td>
+    <td>Status</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>指令生成时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+DeviceControlLog：
+<strong>设备控制日志 （DeviceControlLog）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>控制设备 </td>
+    <td>ControlDeviceUnitID</td>
+    <td>ControlDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>控制指令 </td>
+    <td>DeviceControlCommandID</td>
+    <td>DeviceControlCommandID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备值 </td>
+    <td>DeviceValue</td>
+    <td>DeviceValue</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备状态 </td>
+    <td>ShowValue</td>
+    <td>ShowValue</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>控制结果 </td>
+    <td>ControlResult</td>
+    <td>ControlResult</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>失败原因 </td>
+    <td>FailReason</td>
+    <td>FailReason</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+DeviceData：
+<strong>设备数据记录 （DeviceData）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器设备 </td>
+    <td>SensorDeviceUnitID</td>
+    <td>SensorDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>原始值 </td>
+    <td>OriginalValue</td>
+    <td>OriginalValue</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>处理值 </td>
+    <td>ProcessedValue</td>
+    <td>ProcessedValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>显示值 </td>
+    <td>ShowValue</td>
+    <td>ShowValue</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否异常 </td>
+    <td>IsException</td>
+    <td>IsException</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>上限 </td>
+    <td>Max</td>
+    <td>Max</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>下限 </td>
+    <td>Min</td>
+    <td>Min</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+DeviceDataExceptionLog：
+<strong>设备数据异常记录 （DeviceDataExceptionLog）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器设备 </td>
+    <td>SensorDeviceUnitID</td>
+    <td>SensorDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>原始值 </td>
+    <td>OriginalValue</td>
+    <td>OriginalValue</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>处理值 </td>
+    <td>ProcessedValue</td>
+    <td>ProcessedValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>显示值 </td>
+    <td>ShowValue</td>
+    <td>ShowValue</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>上限 </td>
+    <td>Max</td>
+    <td>Max</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>下限 </td>
+    <td>Min</td>
+    <td>Min</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+DeviceType：
+<strong>设备类型 （DeviceType）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码 </td>
+    <td>Serialnum</td>
+    <td>Serialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>上级类型编码 </td>
+    <td>ParentSerialnum</td>
+    <td>ParentSerialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>形象图片 </td>
+    <td>PhotoUrl</td>
+    <td>PhotoUrl</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>描述 </td>
+    <td>Introduce</td>
+    <td>Introduce</td>
+    <td>String</td>
+    <td>-1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+Facility：
+<strong>基地设施 （Facility）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>基地 </td>
+    <td>FarmID</td>
+    <td>FarmID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设施类型 </td>
+    <td>FacilityTypeSerialnum</td>
+    <td>FacilityTypeSerialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>形象图片 </td>
+    <td>PhotoUrl</td>
+    <td>PhotoUrl</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>地址 </td>
+    <td>Address</td>
+    <td>Address</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>联系人 </td>
+    <td>ContactMan</td>
+    <td>ContactMan</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>联系电话 </td>
+    <td>ContactPhone</td>
+    <td>ContactPhone</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>手机 </td>
+    <td>ContactMobile</td>
+    <td>ContactMobile</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>状态 </td>
+    <td>Status</td>
+    <td>Status</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设施介绍 </td>
+    <td>Introduce</td>
+    <td>Introduce</td>
+    <td>String</td>
+    <td>-1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+FacilityCamera：
+<strong>设施摄像机 （FacilityCamera）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>FacilityID </td>
+    <td>FacilityID</td>
+    <td>FacilityID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>CameraID </td>
+    <td>CameraID</td>
+    <td>CameraID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+FacilityControlDeviceUnit：
+<strong>设施控制设备 （FacilityControlDeviceUnit）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设施 </td>
+    <td>FacilityID</td>
+    <td>FacilityID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>控制设备 </td>
+    <td>ControlDeviceUnitID</td>
+    <td>ControlDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+FacilitySensorDeviceUnit：
+<strong>设施传感器设备 （FacilitySensorDeviceUnit）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设施 </td>
+    <td>FacilityID</td>
+    <td>FacilityID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器设备 </td>
+    <td>SensorDeviceUnitID</td>
+    <td>SensorDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+FacilityType：
+<strong>设施类型 （FacilityType）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码 </td>
+    <td>Serialnum</td>
+    <td>Serialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>上及类型编码 </td>
+    <td>ParentSerialnum</td>
+    <td>ParentSerialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>形象图片 </td>
+    <td>PhotoUrl</td>
+    <td>PhotoUrl</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>描述 </td>
+    <td>Introduce</td>
+    <td>Introduce</td>
+    <td>String</td>
+    <td>-1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建类型 </td>
+    <td>CreateType</td>
+    <td>CreateType</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+Farm：
+<strong>基地 （Farm）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>企业 </td>
+    <td>CompanySerialnum</td>
+    <td>CompanySerialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>地址 </td>
+    <td>Address</td>
+    <td>Address</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>形象图片 </td>
+    <td>PhotoUrl</td>
+    <td>PhotoUrl</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>经度 </td>
+    <td>Lotitude</td>
+    <td>Lotitude</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>纬度 </td>
+    <td>Latitude</td>
+    <td>Latitude</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>面积 </td>
+    <td>Area</td>
+    <td>Area</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>联系人 </td>
+    <td>ContactMan</td>
+    <td>ContactMan</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>联系电话 </td>
+    <td>ContactPhone</td>
+    <td>ContactPhone</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>手机 </td>
+    <td>ContactMobile</td>
+    <td>ContactMobile</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>状态 </td>
+    <td>Status</td>
+    <td>Status</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>数据接口访问KEY </td>
+    <td>APIKey</td>
+    <td>APIKey</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>是否上传 </td>
+    <td>Upload</td>
+    <td>Upload</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>基地介绍 </td>
+    <td>Introduce</td>
+    <td>Introduce</td>
+    <td>String</td>
+    <td>-1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ModularDevice：
+<strong>模块化设备 （ModularDevice）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备地址 </td>
+    <td>Address</td>
+    <td>Address</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>协议 </td>
+    <td>ProtocalTypeID</td>
+    <td>ProtocalTypeID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>通讯设备 </td>
+    <td>CommunicateDeviceID</td>
+    <td>CommunicateDeviceID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>状态 </td>
+    <td>OnlineStatus</td>
+    <td>OnlineStatus</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>异常 </td>
+    <td>Exception</td>
+    <td>Exception</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>1000</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ParmeterConfig：
+<strong>参数配置表 （ParmeterConfig）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>类型 </td>
+    <td>Type</td>
+    <td>Type</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>参数值 </td>
+    <td>Value</td>
+    <td>Value</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>2000</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ProtocalType：
+<strong>数据处理协议类型 （ProtocalType）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>编号 </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+Sensor：
+<strong>传感器 （Sensor）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>编号 </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码 </td>
+    <td>Code</td>
+    <td>Code</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备类型 </td>
+    <td>DeviceTypeSerialnum</td>
+    <td>DeviceTypeSerialnum</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>测量范围上限 </td>
+    <td>MaxValue</td>
+    <td>MaxValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>测量范围下限 </td>
+    <td>MinValue</td>
+    <td>MinValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>经验值上限 </td>
+    <td>ExperienceMax</td>
+    <td>ExperienceMax</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>经验值下限 </td>
+    <td>ExperienceMin</td>
+    <td>ExperienceMin</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>单位 </td>
+    <td>Unit</td>
+    <td>Unit</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器厂家 </td>
+    <td>Company</td>
+    <td>Company</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>精度 </td>
+    <td>Accuracy</td>
+    <td>Accuracy</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>数值计算公式 </td>
+    <td>ValueComputeString</td>
+    <td>ValueComputeString</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>显示计算公式 </td>
+    <td>ShowComputeString</td>
+    <td>ShowComputeString</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Memo</td>
+    <td>Memo</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+SensorDeviceUnit：
+<strong>传感器设备 （SensorDeviceUnit）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>设备名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>变送器编号 </td>
+    <td>ModularDeviceID</td>
+    <td>ModularDeviceID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器编号 </td>
+    <td>SensorId</td>
+    <td>SensorId</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>功能码 </td>
+    <td>Function</td>
+    <td>Function</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>寄存器地址十进制 </td>
+    <td>RegisterAddress</td>
+    <td>RegisterAddress</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td>寄存器地址(十进制) </td>
+  </tr>
+  <tr class="dbbody">
+    <td>寄存器长度 </td>
+    <td>RegisterSize</td>
+    <td>RegisterSize</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>原始值 </td>
+    <td>OriginalValue</td>
+    <td>OriginalValue</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>处理值 </td>
+    <td>ProcessedValue</td>
+    <td>ProcessedValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>显示值 </td>
+    <td>ShowValue</td>
+    <td>ShowValue</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>更新时间 </td>
+    <td>UpdateTime</td>
+    <td>UpdateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ShowData：
+<strong>显示数据 （ShowData）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器设备 </td>
+    <td>SensorDeviceUnitID</td>
+    <td>SensorDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>展示设备 </td>
+    <td>ShowDeviceID</td>
+    <td>ShowDeviceID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>位置 </td>
+    <td>Position</td>
+    <td>Position</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>1000</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ShowDevice：
+<strong>展示设备 （ShowDevice）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>展示设备类型 </td>
+    <td>ShowDeviceTypeID</td>
+    <td>ShowDeviceTypeID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>通讯设备 </td>
+    <td>CommunicateDeviceID</td>
+    <td>CommunicateDeviceID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ShowDeviceType：
+<strong>展示设备类型 （ShowDeviceType）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>名称 </td>
+    <td>Name</td>
+    <td>Name</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>厂家 </td>
+    <td>Company</td>
+    <td>Company</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>版本号 </td>
+    <td>Version</td>
+    <td>Version</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>1000</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+SMS：
+<strong>短信提醒 （SMS）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>手机号码 </td>
+    <td>Mobile</td>
+    <td>Mobile</td>
+    <td>String</td>
+    <td>11</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>短消息内容 </td>
+    <td>Message</td>
+    <td>Message</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+TimeSharingStatistics：
+<strong>分时统计数据 （TimeSharingStatistics）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码1 </td>
+    <td>Code1</td>
+    <td>Code1</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码2 </td>
+    <td>Code2</td>
+    <td>Code2</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>编码3 </td>
+    <td>Code3</td>
+    <td>Code3</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>传感器设备 </td>
+    <td>SensorDeviceUnitID</td>
+    <td>SensorDeviceUnitID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>分时时段 </td>
+    <td>TimeSharing</td>
+    <td>TimeSharing</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>平均 </td>
+    <td>AvgValue</td>
+    <td>AvgValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>开始值 </td>
+    <td>StartValue</td>
+    <td>StartValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>结束值 </td>
+    <td>EndValue</td>
+    <td>EndValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>最大值 </td>
+    <td>MaxValue</td>
+    <td>MaxValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>处理值 </td>
+    <td>MinValue</td>
+    <td>MinValue</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>样本数量 </td>
+    <td>Count</td>
+    <td>Count</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>上限 </td>
+    <td>Max</td>
+    <td>Max</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>下限 </td>
+    <td>Min</td>
+    <td>Min</td>
+    <td>Decimal</td>
+    <td>18</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>异常次数 </td>
+    <td>ExceptionCount</td>
+    <td>ExceptionCount</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+ApiAccessLog：
+<strong>接口通讯记录 （ApiAccessLog）</strong> <BR>
+<table border="0" cellspacing="0" class="dbtable">
+  <tr align="center" valign="middle" class="caption">
+    <td width="150">中文名</td>
+    <td width="150">英文名</td>
+    <td width="150">字段名</td>
+    <td width="75">数据类型</td>
+    <td width="50">大小</td>
+    <td width="35">主键</td>
+    <td width="35">唯一</td>
+    <td width="35">必填</td>
+    <td width="75">默认值</td>
+    <td width="150">描述</td>
+  </tr>
+  <tr class="dbbody">
+    <td>ID </td>
+    <td>ID</td>
+    <td>ID</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>接口名称 </td>
+    <td>ApiName</td>
+    <td>ApiName</td>
+    <td>String</td>
+    <td>50</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>创建时间 </td>
+    <td>CreateTime</td>
+    <td>CreateTime</td>
+    <td>DateTime</td>
+    <td>3</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>访问结果 </td>
+    <td>Result</td>
+    <td>Result</td>
+    <td>Boolean</td>
+    <td>1</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td>0 </td>
+    <td> </td>
+  </tr>
+  <tr class="dbbody">
+    <td>耗时秒 </td>
+    <td>CostTime</td>
+    <td>CostTime</td>
+    <td>Int32</td>
+    <td>10</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">是</td>
+    <td> </td>
+    <td>耗时(秒) </td>
+  </tr>
+  <tr class="dbbody">
+    <td>备注 </td>
+    <td>Remark</td>
+    <td>Remark</td>
+    <td>String</td>
+    <td>500</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>

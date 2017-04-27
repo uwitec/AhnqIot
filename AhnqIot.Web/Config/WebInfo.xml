@@ -1,0 +1,22 @@
+{
+  "LastUpdateTime": "2016-04-11T23:28:00.3843852+08:00",
+  "SystemName": "安徽农业气象物联网综合服务平台",
+  "Version": "V3",
+  "CopyRight": "Copyright © 2016 www.smartah.cc All Rights Reserved. ",
+  "CompanyName": "安徽斯玛特物联网科技有限公司",
+  "CompanyHref": "http://www.smartah.cc",
+  "Keywords": null,
+  "UrlInfo": {
+    "Logo": "/Content/images/logo.png",
+    "Favicon": "http://www.pintuer.com/favicon.ico",
+    "Login": "/Account/Login",
+    "Logout": "/Account/Logout",
+    "Wechat": "",
+    "Qq": ""
+  },
+  "SystemError": {
+    "ErrorToDeveloper": false,
+    "DeveloperEmail": null,
+    "DeveloperWechat": null
+  }
+}

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D65529FD-196C-48CF-8785-E9FF40884E82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartIot.Tool.DefaultService</RootNamespace>
+    <AssemblyName>SmartIot.Tool.DefaultService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NewLife.Core, Version=5.4.5656.32709, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NewLife.Net, Version=3.1.5725.5635, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\newlife\NewLife.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XAgent">
+      <HintPath>..\libs\newlife\XAgent.exe</HintPath>
+    </Reference>
+    <Reference Include="XCode">
+      <HintPath>..\libs\newlife\XCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConstString.cs" />
+    <Compile Include="Core\ApiTransportHelper.cs" />
+    <Compile Include="Core\CalcControlDeviceValue.cs" />
+    <Compile Include="Core\ComputeHelper.cs" />
+    <Compile Include="Core\ControlJobTypeEnum.cs" />
+    <Compile Include="DataSync\Default.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\ProtocalTypeEnum.cs" />
+    <Compile Include="Work\ControlCollectWork.cs" />
+    <Compile Include="Work\ControlDeviceWork.cs" />
+    <Compile Include="Work\SensorCollectWork.cs" />
+    <Compile Include="Work\SncyWork.cs" />
+    <Compile Include="Work\UploadClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AhnqIot.Infrastructure\AhnqIot.Infrastructure.csproj">
+      <Project>{9dcb9c9c-881f-457b-80e0-76054f75a9c9}</Project>
+      <Name>AhnqIot.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmarIot.Tool.API\SmartIot.Tool.API.csproj">
+      <Project>{8d845219-5bf8-4f1e-b7e7-45b72420d523}</Project>
+      <Name>SmartIot.Tool.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmarIot.Tool.Core\SmartIot.Tool.Core.csproj">
+      <Project>{c6f031d8-1934-4e0f-a83b-8c42d840827f}</Project>
+      <Name>SmartIot.Tool.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmarIot.Tool.DefaultService.API\SmartIot.Tool.DefaultService.API.csproj">
+      <Project>{496a249d-2107-457b-bbac-eca3b920ea21}</Project>
+      <Name>SmartIot.Tool.DefaultService.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmarIot.Tool.DefaultService.DB\SmartIot.Tool.DefaultService.DB.csproj">
+      <Project>{77ba811e-6bf2-475f-840a-92144a55b809}</Project>
+      <Name>SmartIot.Tool.DefaultService.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartIot.Api.Protocal\SmartIot.Api.Protocal.csproj">
+      <Project>{50506061-8666-4077-8a75-ce2395538e77}</Project>
+      <Name>SmartIot.Api.Protocal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartIot.Service.Core\SmartIot.Service.Core.csproj">
+      <Project>{04b0b6c9-4656-4e14-ad61-d5ec47d8bbb8}</Project>
+      <Name>SmartIot.Service.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

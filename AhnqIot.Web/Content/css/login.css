@@ -1,0 +1,103 @@
+ * {
+            margin: 0 auto;
+            font-size: 12px;
+            font-family: "微软雅黑";
+        }
+
+        body {
+            margin: 0 auto;
+            height: 926px;
+            width: 1600px;
+            background: url(../images/login/bg.jpg) no-repeat center center;
+        }
+
+        .middle {
+            height: 456px;
+            width: 412px;
+            top: 255px;
+            left: 60%;
+            right: 177px;
+            position: absolute;
+            background: url(../images/login/login-bg.png) no-repeat center right;
+        }
+
+        .input-username {
+            top: 155px;
+            left: 75px;
+            width: 300px;
+            position: relative;
+        }
+
+        .input-password {
+            top: 175px;
+            left: 75px;
+            width: 300px;
+            position: relative;
+        }
+
+       .group-validate{
+        	clear:both;
+       		top:195px;
+       		left:40px;
+       		width:337px;
+       		position:relative;
+       }
+       
+       .input-validate{
+       	    float:left;
+       		width:157px;
+       }
+       
+       .valiCode{
+       	    float:left;
+       	 	width:159px;
+       		height:36px;
+       		margin-left:13px;
+       	
+       }
+
+        .input-remember {
+            top: 215px;
+            left: 40px;
+            width: 337px;
+            font-size: 12px;
+            color: #666666;
+            position: relative;
+        }
+
+        #remember, #auto-login {
+            height: 17px;
+            width: 17px;
+        }
+
+        #auto-login {
+            margin-left: 25px;
+        }
+
+        .forgot-password {
+            margin-left: 80px;
+        }
+
+        .group-button {
+            top: 245px;
+            left: 40px;
+            width: 337px;
+            color: #666666;
+            position: relative;
+        }
+
+        .btnLogin, .register {
+            font-size: 16px;
+            height: 36px;
+            width: 159px;
+        }
+
+        .register {
+            margin-left: 10px;
+            color: #333;
+            border: 1px solid #0798e4;
+        }
+
+        .ms-controller, .ms-important, [ms-controller], [ms-important] {
+            visibility: hidden;
+        }

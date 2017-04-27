@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77BA811E-6BF2-475F-840A-92144A55B809}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartIot.Tool.DefaultService.DB</RootNamespace>
+    <AssemblyName>SmartIot.Tool.DefaultService.DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NewLife.Core">
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XCode">
+      <HintPath>..\libs\newlife\XCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AttributeExtend.cs" />
+    <Compile Include="Common\LogEntity.cs" />
+    <Compile Include="Common\LogProvider.cs" />
+    <Compile Include="Common\PropertyHandle.cs" />
+    <Compile Include="Config\传感器.Biz.cs" />
+    <Compile Include="Config\传感器.cs" />
+    <Compile Include="Config\参数配置表.Biz.cs" />
+    <Compile Include="Config\参数配置表.cs" />
+    <Compile Include="Config\展示设备类型.Biz.cs" />
+    <Compile Include="Config\展示设备类型.cs" />
+    <Compile Include="Config\数据处理协议类型.Biz.cs" />
+    <Compile Include="Config\数据处理协议类型.cs" />
+    <Compile Include="Config\控制工作类型.cs" />
+    <Compile Include="Config\控制工作类型.Biz.cs" />
+    <Compile Include="Config\设备类型.Biz.cs" />
+    <Compile Include="Config\设备类型.cs" />
+    <Compile Include="Config\继电器类型.cs" />
+    <Compile Include="Config\继电器类型.Biz.cs" />
+    <Compile Include="Config\设施类型.Biz.cs" />
+    <Compile Include="Config\设施类型.cs" />
+    <Compile Include="Config\通讯设备类型.Biz.cs" />
+    <Compile Include="Config\通讯设备类型.cs" />
+    <Compile Include="Data\分时统计数据.Biz.cs" />
+    <Compile Include="Data\分时统计数据.cs" />
+    <Compile Include="Data\接口通讯记录.Biz.cs" />
+    <Compile Include="Data\接口通讯记录.cs" />
+    <Compile Include="Data\控制指令.Biz.cs" />
+    <Compile Include="Data\控制指令.cs" />
+    <Compile Include="Data\设备控制日志.Biz.cs" />
+    <Compile Include="Data\设备控制日志.cs" />
+    <Compile Include="Data\设备数据异常记录.Biz.cs" />
+    <Compile Include="Data\设备数据异常记录.cs" />
+    <Compile Include="Data\设备数据记录.Biz.cs" />
+    <Compile Include="Data\设备数据记录.cs" />
+    <Compile Include="Device\传感器设备.Biz.cs" />
+    <Compile Include="Device\传感器设备.cs" />
+    <Compile Include="Device\基地.Biz.cs" />
+    <Compile Include="Device\基地.cs" />
+    <Compile Include="Device\基地设施.Biz.cs" />
+    <Compile Include="Device\基地设施.cs" />
+    <Compile Include="Device\控制设备.Biz.cs" />
+    <Compile Include="Device\控制设备.cs" />
+    <Compile Include="Device\摄像机.Biz.cs" />
+    <Compile Include="Device\摄像机.cs" />
+    <Compile Include="Device\摄像机预置点.Biz.cs" />
+    <Compile Include="Device\摄像机预置点.cs" />
+    <Compile Include="Device\模块化设备.Biz.cs" />
+    <Compile Include="Device\模块化设备.cs" />
+    <Compile Include="Device\设施传感器设备.Biz.cs" />
+    <Compile Include="Device\设施传感器设备.cs" />
+    <Compile Include="Device\设施控制设备.Biz.cs" />
+    <Compile Include="Device\设施控制设备.cs" />
+    <Compile Include="Device\设施摄像机.Biz.cs" />
+    <Compile Include="Device\设施摄像机.cs" />
+    <Compile Include="Device\通讯设备.Biz.cs" />
+    <Compile Include="Device\通讯设备.cs" />
+    <Compile Include="Display\展示设备.Biz.cs" />
+    <Compile Include="Display\展示设备.cs" />
+    <Compile Include="Display\显示数据.Biz.cs" />
+    <Compile Include="Display\显示数据.cs" />
+    <Compile Include="Message\短信提醒.Biz.cs" />
+    <Compile Include="Message\短信提醒.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\日志.Biz.cs" />
+    <Compile Include="Common\日志.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XCoder.log">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XCoder.tt</DependentUpon>
+    </None>
+    <None Include="XCoder.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>XCoder.log</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SmartIot-Scada.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="old\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

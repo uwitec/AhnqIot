@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables Version="8.18.5659.41468">
+  <Table Name="Camera" Description="摄像机" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="UserID" DataType="String" Default="admin" Description="登录用户名" />
+      <Column Name="UserPwd" DataType="String" Description="登录密码" />
+      <Column Name="CameraHost" DataType="String" Default="192.168.1.64" Description="地址" />
+      <Column Name="CameraHttpPort" DataType="Int32" Nullable="False" Default="80" Description="web端口号" />
+      <Column Name="CameraDataPort" DataType="Int32" Nullable="False" Default="8000" Description="数据端口号" />
+      <Column Name="CameraRTSPPort" DataType="Int32" Nullable="False" Default="554" Description="数据端口号" />
+      <Column Name="Channel" DataType="Int32" Nullable="False" Default="1" Description="通道" />
+      <Column Name="StreamMedia" DataType="String" Length="500" Description="流媒体地址" />
+      <Column Name="Company" DataType="String" Length="500" Default="海康威视" Description="厂家" />
+      <Column Name="OnlineStatus" DataType="Boolean" Nullable="False" Description="状态" />
+      <Column Name="Exception" DataType="String" Description="异常" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK__Facility__3214EC279E14A2E8" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="FacilityCamera" RelationColumn="CameraID" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="CameraPresetPoint" Description="摄像机预置点" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="预置点名称" />
+      <Column Name="PresetPoint" DataType="Int32" Nullable="False" Description="预置点位置" />
+      <Column Name="FacilityCameraID" DataType="Int32" Nullable="False" Description="设施摄像机" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="UpdateTime" DataType="DateTime" Nullable="False" Description="更新时间" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="IX_FacilityCameraPresetPoint_FacilityCameraID" Columns="FacilityCameraID" />
+      <Index Name="PK_CameraPresetPoint" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="FacilityCameraID" RelationTable="FacilityCamera" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="CommunicateDevice" Description="通讯设备" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="CommunicateDeviceTypeID" DataType="Int32" Nullable="False" Description="通讯设备类型" />
+      <Column Name="Args1" DataType="String" Description="参数1" />
+      <Column Name="Args2" DataType="String" Description="参数2" />
+      <Column Name="Args3" DataType="String" Description="参数3" />
+      <Column Name="Args4" DataType="String" Description="参数4" />
+      <Column Name="Args5" DataType="String" Description="参数5" />
+      <Column Name="OnlineStatus" DataType="Boolean" Nullable="False" Description="状态" />
+      <Column Name="Exception" DataType="String" Description="异常" />
+      <Column Name="Remark" DataType="String" Length="1000" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Columns="CommunicateDeviceTypeID" />
+      <Index Name="PK__CommunicateDevice" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="CommunicateDeviceTypeID" RelationTable="CommunicateDeviceType" RelationColumn="ID" />
+      <Relation Column="ID" RelationTable="ModularDevice" RelationColumn="CommunicateDeviceID" Unique="True" />
+      <Relation Column="ID" RelationTable="ShowDevice" RelationColumn="CommunicateDeviceID" Unique="True" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="CommunicateDeviceType" Description="通讯设备类型" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="Remark" DataType="String" Length="1000" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK__Communic__3214EC27C02111D7" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="CommunicateDevice" RelationColumn="CommunicateDeviceTypeID" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="ControlDeviceUnit" Description="控制设备" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="设备名称" />
+      <Column Name="ModularDeviceID" DataType="Int32" Nullable="False" Description="模块化设备" />
+      <Column Name="DeviceTypeSerialnum" DataType="String" Nullable="False" Description="设备类型" />
+      <Column Name="Function" DataType="Int32" Nullable="False" Description="功能码" />
+      <Column Name="IsComposite" DataType="Boolean" Nullable="False" Description="组合设备" />
+      <Column Name="RegisterAddress1" DataType="Int32" Nullable="False" DisplayName="寄存器地址十进制" Description="寄存器地址(十进制)" />
+      <Column Name="RegisterAddress1Name" DataType="String" Nullable="False" Description="超始地址" />
+      <Column Name="RegisterAddress2" DataType="Int32" Nullable="False" DisplayName="寄存器地址十进制" Description="寄存器地址(十进制)" />
+      <Column Name="RegisterAddress2Name" DataType="String" Nullable="False" Description="结束地址" />
+      <Column Name="OriginalValue" DataType="Int32" Description="原始值" />
+      <Column Name="ProcessedValue" DataType="String" Description="设备状态" />
+      <Column Name="UpdateTime" DataType="DateTime" Description="更新时间" />
+      <Column Name="Remark" DataType="String" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ControlDeviceUnitDeviceTypeSerialnum" Columns="DeviceTypeSerialnum" />
+      <Index Name="Index_ControlDeviceUnitModularDeviceID" Columns="ModularDeviceID" />
+      <Index Name="PK__ControlD__3214EC27ED28C55C" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="DeviceTypeSerialnum" RelationTable="DeviceType" RelationColumn="Serialnum" />
+      <Relation Column="ModularDeviceID" RelationTable="ModularDevice" RelationColumn="ID" />
+      <Relation Column="ID" RelationTable="DeviceControlCommand" RelationColumn="ControlDeviceUnitID" Unique="True" />
+      <Relation Column="ID" RelationTable="DeviceControlLog" RelationColumn="ControlDeviceUnitID" Unique="True" Computed="True" />
+      <Relation Column="ID" RelationTable="FacilityControlDeviceUnit" RelationColumn="ControlDeviceUnitID" Unique="True" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="DeviceControlCommand" Description="控制指令" DbType="SqlServer" 实体分类="Data" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="ControlDeviceUnitID" DataType="Int32" Nullable="False" Description="控制设备" />
+      <Column Name="Command" DataType="String" Length="500" Description="指令内容" />
+      <Column Name="ControlContinueTime" DataType="Int32" Description="控制指令执行的时间长度，单位秒，0为不自动结束控制。" />
+      <Column Name="Status" DataType="Int32" Nullable="False" Description="0为未执行，1为正在执行，2执行成功，4为执行失败，8为指令过期。" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="指令生成时间" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ControlDeviceUnitID" Columns="ControlDeviceUnitID" />
+      <Index Name="PK__DeviceCo__3214EC2786562325" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ControlDeviceUnitID" RelationTable="ControlDeviceUnit" RelationColumn="ID" />
+      <Relation Column="ID" RelationTable="DeviceControlLog" RelationColumn="DeviceControlCommandID" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="DeviceControlLog" Description="设备控制日志" DbType="SqlServer" 实体分类="Data" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="ControlDeviceUnitID" DataType="Int32" Nullable="False" Description="控制设备" />
+      <Column Name="DeviceControlCommandID" DataType="Int32" Nullable="False" Description="控制指令" />
+      <Column Name="DeviceValue" DataType="Int32" Nullable="False" Description="设备值" />
+      <Column Name="ShowValue" DataType="String" Length="500" Description="设备状态" />
+      <Column Name="ControlResult" DataType="Boolean" Nullable="False" Description="控制结果" />
+      <Column Name="FailReason" DataType="String" Length="500" Description="失败原因" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ControlDeviceUnitID" Columns="ControlDeviceUnitID" />
+      <Index Columns="DeviceControlCommandID" />
+      <Index Name="PK__DeviceCo__3214EC27EF53CE14" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ControlDeviceUnitID" RelationTable="ControlDeviceUnit" RelationColumn="ID" />
+      <Relation Column="DeviceControlCommandID" RelationTable="DeviceControlCommand" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="DeviceData" Description="设备数据记录" DbType="SqlServer" 实体分类="Data" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="SensorDeviceUnitID" DataType="Int32" Nullable="False" Description="传感器设备" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="OriginalValue" DataType="Int32" Nullable="False" Description="原始值" />
+      <Column Name="ProcessedValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="处理值" />
+      <Column Name="ShowValue" DataType="String" Description="显示值" />
+      <Column Name="IsException" DataType="Boolean" Nullable="False" Description="是否异常" />
+      <Column Name="Max" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="上限" />
+      <Column Name="Min" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="下限" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_DeviceDataCreateTime" Columns="CreateTime" />
+      <Index Name="Index_DeviceDataSensorDeviceUnitID" Columns="SensorDeviceUnitID" />
+      <Index Name="PK__DeviceDa__3214EC271460D96D" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="SensorDeviceUnitID" RelationTable="SensorDeviceUnit" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="DeviceDataExceptionLog" Description="设备数据异常记录" DbType="SqlServer" 实体分类="Data" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="SensorDeviceUnitID" DataType="Int32" Nullable="False" Description="传感器设备" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="OriginalValue" DataType="Int32" Nullable="False" Description="原始值" />
+      <Column Name="ProcessedValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="处理值" />
+      <Column Name="ShowValue" DataType="String" Nullable="False" Description="显示值" />
+      <Column Name="Max" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="上限" />
+      <Column Name="Min" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="下限" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_DeviceDataExceptionLogCreateTime" Columns="CreateTime" />
+      <Index Name="Index_DeviceDataExceptionLogSensorDeviceUnitID" Columns="SensorDeviceUnitID" />
+      <Index Name="PK__DeviceDa__3214EC27B75454CC" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="SensorDeviceUnitID" RelationTable="SensorDeviceUnit" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="DeviceType" Description="设备类型" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="Serialnum" DataType="String" PrimaryKey="True" Nullable="False" Description="编码" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="ParentSerialnum" DataType="String" Description="上级类型编码" />
+      <Column Name="PhotoUrl" DataType="String" Length="500" Description="形象图片" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="UpdateTime" DataType="DateTime" Description="更新时间" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Introduce" DataType="String" Length="-1" Description="描述" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_DeviceTypeName" Columns="Name" />
+      <Index Name="PK__DeviceTy__E3E7488D9DACADC2" Columns="Serialnum" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="Serialnum" RelationTable="ControlDeviceUnit" RelationColumn="DeviceTypeSerialnum" Unique="True" />
+      <Relation Column="Serialnum" RelationTable="Sensor" RelationColumn="DeviceTypeSerialnum" Unique="True" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="Facility" Description="基地设施" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="FarmID" DataType="Int32" Nullable="False" Description="基地" />
+      <Column Name="FacilityTypeSerialnum" DataType="String" Nullable="False" Description="设施类型" />
+      <Column Name="PhotoUrl" DataType="String" Length="500" Description="形象图片" />
+      <Column Name="Address" DataType="String" Length="500" Description="地址" />
+      <Column Name="ContactMan" DataType="String" Description="联系人" />
+      <Column Name="ContactPhone" DataType="String" Description="联系电话" />
+      <Column Name="ContactMobile" DataType="String" Description="手机" />
+      <Column Name="Status" DataType="Boolean" Nullable="False" Description="状态" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="UpdateTime" DataType="DateTime" Description="更新时间" />
+      <Column Name="Introduce" DataType="String" Length="-1" Description="设施介绍" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_FarmID" Columns="FarmID" />
+      <Index Columns="FacilityTypeSerialnum" />
+      <Index Name="PK__Facility__3214EC2756B9A226" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="FacilityTypeSerialnum" RelationTable="FacilityType" RelationColumn="Serialnum" />
+      <Relation Column="FarmID" RelationTable="Farm" RelationColumn="ID" />
+      <Relation Column="ID" RelationTable="FacilityCamera" RelationColumn="FacilityID" Unique="True" />
+      <Relation Column="ID" RelationTable="FacilityControlDeviceUnit" RelationColumn="FacilityID" Unique="True" Computed="True" />
+      <Relation Column="ID" RelationTable="FacilitySensorDeviceUnit" RelationColumn="FacilityID" Unique="True" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="FacilityCamera" Description="设施摄像机" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="FacilityID" DataType="Int32" Nullable="False" />
+      <Column Name="CameraID" DataType="Int32" Nullable="False" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="UpdateTime" DataType="DateTime" Nullable="False" Description="更新时间" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK_FacilityCamera" Columns="ID" Unique="True" PrimaryKey="True" />
+      <Index Columns="CameraID" Computed="True" />
+      <Index Columns="FacilityID" Computed="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="CameraPresetPoint" RelationColumn="FacilityCameraID" Unique="True" />
+      <Relation Column="CameraID" RelationTable="Camera" RelationColumn="ID" Computed="True" />
+      <Relation Column="FacilityID" RelationTable="Facility" RelationColumn="ID" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="FacilityControlDeviceUnit" Description="设施控制设备" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="设备名称" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="FacilityID" DataType="Int32" Nullable="False" Description="设施" />
+      <Column Name="ControlDeviceUnitID" DataType="Int32" Nullable="False" Description="控制设备" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Remark" DataType="String" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK_FacilityControlDeviceUnit" Columns="ID" Unique="True" PrimaryKey="True" />
+      <Index Columns="ControlDeviceUnitID" Computed="True" />
+      <Index Columns="FacilityID" Computed="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ControlDeviceUnitID" RelationTable="ControlDeviceUnit" RelationColumn="ID" Computed="True" />
+      <Relation Column="FacilityID" RelationTable="Facility" RelationColumn="ID" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="FacilitySensorDeviceUnit" Description="设施传感器设备" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Description="设备名称" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="FacilityID" DataType="Int32" Nullable="False" Description="设施" />
+      <Column Name="SensorDeviceUnitID" DataType="Int32" Nullable="False" Description="传感器设备" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Remark" DataType="String" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK_FacilitySensorDeviceUnit" Columns="ID" Unique="True" PrimaryKey="True" />
+      <Index Columns="FacilityID" Computed="True" />
+      <Index Columns="SensorDeviceUnitID" Computed="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="FacilityID" RelationTable="Facility" RelationColumn="ID" Computed="True" />
+      <Relation Column="SensorDeviceUnitID" RelationTable="SensorDeviceUnit" RelationColumn="ID" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="FacilityType" Description="设施类型" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="Serialnum" DataType="String" PrimaryKey="True" Nullable="False" Description="编码" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="ParentSerialnum" DataType="String" Description="上及类型编码" />
+      <Column Name="PhotoUrl" DataType="String" Length="500" Description="形象图片" />
+      <Column Name="Introduce" DataType="String" Length="-1" Description="描述" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="UpdateTime" DataType="DateTime" Nullable="False" Description="更新时间" />
+      <Column Name="CreateType" DataType="String" Description="创建类型" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_FacilityTypeName" Columns="Name" />
+      <Index Name="PK__Facility__E3E7488DCD40871C" Columns="Serialnum" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="Serialnum" RelationTable="Facility" RelationColumn="FacilityTypeSerialnum" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="Farm" Description="基地" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="CompanySerialnum" DataType="String" Description="企业" />
+      <Column Name="Address" DataType="String" Length="500" Description="地址" />
+      <Column Name="PhotoUrl" DataType="String" Length="500" Description="形象图片" />
+      <Column Name="Lotitude" DataType="String" Description="经度" />
+      <Column Name="Latitude" DataType="String" Description="纬度" />
+      <Column Name="Area" DataType="Int32" Nullable="False" Default="0" Description="面积" />
+      <Column Name="ContactMan" DataType="String" Description="联系人" />
+      <Column Name="ContactPhone" DataType="String" Description="联系电话" />
+      <Column Name="ContactMobile" DataType="String" Description="手机" />
+      <Column Name="Status" DataType="Boolean" Nullable="False" Default="0" Description="状态" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="UpdateTime" DataType="DateTime" Nullable="False" Description="更新时间" />
+      <Column Name="APIKey" DataType="String" Length="500" Description="数据接口访问KEY" />
+      <Column Name="Upload" DataType="Boolean" Nullable="False" Default="0" Description="是否上传" />
+      <Column Name="Version" DataType="Int32" Nullable="False" Default="0" Description="版本" />
+      <Column Name="Introduce" DataType="String" Length="-1" Description="基地介绍" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK__Farm__3214EC27C24FB40E" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="Facility" RelationColumn="FarmID" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="ModularDevice" Description="模块化设备" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="Address" DataType="String" Nullable="False" Description="设备地址" />
+      <Column Name="ProtocalTypeID" DataType="Int32" Nullable="False" Description="协议" />
+      <Column Name="CommunicateDeviceID" DataType="Int32" Nullable="False" Description="通讯设备" />
+      <Column Name="OnlineStatus" DataType="Boolean" Nullable="False" Description="状态" />
+      <Column Name="Exception" DataType="String" Description="异常" />
+      <Column Name="Remark" DataType="String" Length="1000" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ModularDeviceName" Columns="Name" />
+      <Index Columns="CommunicateDeviceID" />
+      <Index Name="PK__ModularD__3214EC27D876B505" Columns="ID" Unique="True" PrimaryKey="True" />
+      <Index Columns="ProtocalTypeID" Computed="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="ControlDeviceUnit" RelationColumn="ModularDeviceID" Unique="True" />
+      <Relation Column="CommunicateDeviceID" RelationTable="CommunicateDevice" RelationColumn="ID" />
+      <Relation Column="ProtocalTypeID" RelationTable="ProtocalType" RelationColumn="ID" Computed="True" />
+      <Relation Column="ID" RelationTable="SensorDeviceUnit" RelationColumn="ModularDeviceID" Unique="True" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="ParmeterConfig" Description="参数配置表" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Type" DataType="String" Nullable="False" Description="类型" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="Value" DataType="String" Nullable="False" Description="参数值" />
+      <Column Name="Remark" DataType="String" Length="2000" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ParmeterConfigName" Columns="Name" />
+      <Index Name="Index_ParmeterConfigType" Columns="Type" />
+      <Index Name="PK__Parmeter__3214EC27FEF0B029" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+  </Table>
+  <Table Name="ProtocalType" Description="数据处理协议类型" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="编号" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ProtocalTypeName" Columns="Name" />
+      <Index Name="PK__Protocal__3214EC279B1633A6" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="ModularDevice" RelationColumn="ProtocalTypeID" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="Sensor" Description="传感器" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="编号" />
+      <Column Name="Code" DataType="String" Nullable="False" Description="编码" />
+      <Column Name="DeviceTypeSerialnum" DataType="String" Description="设备类型" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="传感器名称" />
+      <Column Name="MaxValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="测量范围上限" />
+      <Column Name="MinValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="测量范围下限" />
+      <Column Name="ExperienceMax" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Description="经验值上限" />
+      <Column Name="ExperienceMin" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Description="经验值下限" />
+      <Column Name="Unit" DataType="String" Nullable="False" Description="单位" />
+      <Column Name="Company" DataType="String" Description="传感器厂家" />
+      <Column Name="Accuracy" DataType="Int32" Nullable="False" Description="精度" />
+      <Column Name="ValueComputeString" DataType="String" Length="500" Description="数值计算公式" />
+      <Column Name="ShowComputeString" DataType="String" Length="500" Description="显示计算公式" />
+      <Column Name="Memo" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_SensorCode" Columns="Code" />
+      <Index Columns="DeviceTypeSerialnum" />
+      <Index Name="PK__Sensor__3214EC2715DB9C7F" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="DeviceTypeSerialnum" RelationTable="DeviceType" RelationColumn="Serialnum" />
+      <Relation Column="ID" RelationTable="SensorDeviceUnit" RelationColumn="SensorId" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="SensorDeviceUnit" Description="传感器设备" DbType="SqlServer" 实体分类="Device" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="设备名称" />
+      <Column Name="ModularDeviceID" DataType="Int32" Nullable="False" Description="变送器编号" />
+      <Column Name="SensorId" DataType="Int32" Nullable="False" Description="传感器编号" />
+      <Column Name="Function" DataType="Int32" Nullable="False" Description="功能码" />
+      <Column Name="RegisterAddress" DataType="Int32" Nullable="False" DisplayName="寄存器地址十进制" Description="寄存器地址(十进制)" />
+      <Column Name="RegisterSize" DataType="Int32" Nullable="False" Description="寄存器长度" />
+      <Column Name="OriginalValue" DataType="Int32" Nullable="False" Description="原始值" />
+      <Column Name="ProcessedValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="处理值" />
+      <Column Name="ShowValue" DataType="String" Description="显示值" />
+      <Column Name="UpdateTime" DataType="DateTime" Nullable="False" Description="更新时间" />
+      <Column Name="Remark" DataType="String" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_SensorDeviceUnitModularDeviceID" Columns="ModularDeviceID" />
+      <Index Name="Index_SensorDeviceUnitSensorId" Columns="SensorId" />
+      <Index Name="PK__SensorDe__3214EC27D4154CBB" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="DeviceData" RelationColumn="SensorDeviceUnitID" Unique="True" />
+      <Relation Column="ID" RelationTable="DeviceDataExceptionLog" RelationColumn="SensorDeviceUnitID" Unique="True" Computed="True" />
+      <Relation Column="ID" RelationTable="FacilitySensorDeviceUnit" RelationColumn="SensorDeviceUnitID" Unique="True" Computed="True" />
+      <Relation Column="ModularDeviceID" RelationTable="ModularDevice" RelationColumn="ID" />
+      <Relation Column="SensorId" RelationTable="Sensor" RelationColumn="ID" />
+      <Relation Column="ID" RelationTable="ShowData" RelationColumn="SensorDeviceUnitID" Unique="True" Computed="True" />
+      <Relation Column="ID" RelationTable="TimeSharingStatistics" RelationColumn="SensorDeviceUnitID" Unique="True" Computed="True" />
+    </Relations>
+  </Table>
+  <Table Name="ShowData" Description="显示数据" DbType="SqlServer" 实体分类="Display" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="SensorDeviceUnitID" DataType="Int32" Nullable="False" Description="传感器设备" />
+      <Column Name="ShowDeviceID" DataType="Int32" Nullable="False" Description="展示设备" />
+      <Column Name="Position" DataType="Int32" Nullable="False" Description="位置" />
+      <Column Name="Remark" DataType="String" Length="1000" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ShowDataSensorDeviceUnitID" Columns="SensorDeviceUnitID" />
+      <Index Name="Index_ShowDataShowDeviceID" Columns="ShowDeviceID" />
+      <Index Name="PK__ShowData__3214EC275454FE04" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="SensorDeviceUnitID" RelationTable="SensorDeviceUnit" RelationColumn="ID" />
+      <Relation Column="ShowDeviceID" RelationTable="ShowDevice" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="ShowDevice" Description="展示设备" DbType="SqlServer" 实体分类="Display" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Length="500" Nullable="False" Description="名称" />
+      <Column Name="ShowDeviceTypeID" DataType="Int32" Nullable="False" Description="展示设备类型" />
+      <Column Name="CommunicateDeviceID" DataType="Int32" Nullable="False" Description="通讯设备" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ShowDeviceCommunicateDeviceID" Columns="CommunicateDeviceID" />
+      <Index Name="Index_ShowDeviceShowDeviceTypeID" Columns="ShowDeviceTypeID" />
+      <Index Name="PK__ShowDevi__3214EC2738312937" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="ShowData" RelationColumn="ShowDeviceID" Unique="True" />
+      <Relation Column="CommunicateDeviceID" RelationTable="CommunicateDevice" RelationColumn="ID" />
+      <Relation Column="ShowDeviceTypeID" RelationTable="ShowDeviceType" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="ShowDeviceType" Description="展示设备类型" DbType="SqlServer" 实体分类="Config" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Name" DataType="String" Master="True" Nullable="False" Description="名称" />
+      <Column Name="Company" DataType="String" Length="500" Description="厂家" />
+      <Column Name="Version" DataType="String" Length="500" Description="版本号" />
+      <Column Name="Remark" DataType="String" Length="1000" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK__ShowDevi__3214EC276E7289B8" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="ID" RelationTable="ShowDevice" RelationColumn="ShowDeviceTypeID" Unique="True" />
+    </Relations>
+  </Table>
+  <Table Name="SMS" Description="短信提醒" DbType="SqlServer" 实体分类="Message" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Mobile" DataType="String" Length="11" Nullable="False" Description="手机号码" />
+      <Column Name="Message" DataType="String" Length="500" Nullable="False" Description="短消息内容" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+    </Columns>
+    <Indexes>
+      <Index Name="PK__SMS__3214EC2762161060" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+  </Table>
+  <Table Name="TimeSharingStatistics" Description="分时统计数据" DbType="SqlServer" 实体分类="Data" ConnName="SmartIot-Scada">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="Code1" DataType="String" Description="编码1" />
+      <Column Name="Code2" DataType="String" Description="编码2" />
+      <Column Name="Code3" DataType="String" Description="编码3" />
+      <Column Name="SensorDeviceUnitID" DataType="Int32" Nullable="False" Description="传感器设备" />
+      <Column Name="TimeSharing" DataType="Int32" Nullable="False" Description="分时时段" />
+      <Column Name="AvgValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="平均" />
+      <Column Name="StartValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="开始值" />
+      <Column Name="EndValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="结束值" />
+      <Column Name="MaxValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="最大值" />
+      <Column Name="MinValue" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Nullable="False" Description="处理值" />
+      <Column Name="Count" DataType="Int32" Nullable="False" Description="样本数量" />
+      <Column Name="Max" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Description="上限" />
+      <Column Name="Min" DataType="Decimal" RawType="decimal" Length="18" NumOfByte="9" Precision="18" Scale="1" Description="下限" />
+      <Column Name="ExceptionCount" DataType="Int32" Nullable="False" Description="异常次数" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_TimeSharingStatisticsCreateTime" Columns="CreateTime" />
+      <Index Name="Index_TimeSharingStatisticsSensorDeviceUnitID" Columns="SensorDeviceUnitID" />
+      <Index Name="Index_TimeSharingStatisticsTimeSharing" Columns="TimeSharing" />
+      <Index Name="PK__TimeShar__3214EC27D5006A90" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+    <Relations>
+      <Relation Column="SensorDeviceUnitID" RelationTable="SensorDeviceUnit" RelationColumn="ID" />
+    </Relations>
+  </Table>
+  <Table Name="ApiAccessLog" Description="接口通讯记录" DbType="SqlServer" 实体分类="Data" ConnName="SmartIot-Scada-data">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="ID" />
+      <Column Name="ApiName" DataType="String" Description="接口名称" />
+      <Column Name="CreateTime" DataType="DateTime" Nullable="False" Description="创建时间" />
+      <Column Name="Result" DataType="Boolean" Nullable="False" Default="0" Description="访问结果" />
+      <Column Name="CostTime" DataType="Int32" Nullable="False" DisplayName="耗时秒" Description="耗时(秒)" />
+      <Column Name="Remark" DataType="String" Length="500" Description="备注" />
+    </Columns>
+    <Indexes>
+      <Index Name="Index_ApiAccessLogCreateTime" Columns="CreateTime" />
+      <Index Name="Index_ApiAccessLogApiName" Columns="ApiName" />
+      <Index Name="PK__ApiAccessLog_" Columns="ID" Unique="True" PrimaryKey="True" />
+    </Indexes>
+  </Table>
+</Tables>

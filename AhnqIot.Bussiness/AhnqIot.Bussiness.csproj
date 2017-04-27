@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92CDE430-8BC7-4AC7-A3BA-1AABF9F653F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AhnqIot.Bussiness</RootNamespace>
+    <AssemblyName>AhnqIot.Bussiness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dos.ORM, Version=1.10.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dos.ORM.1.10.5.0\lib\net40\Dos.ORM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="NewLife.Core">
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgrDiagnosticInfoService.cs" />
+    <Compile Include="AgrDiagnosticModelService.cs" />
+    <Compile Include="AgrProduceAnniversaryService.cs" />
+    <Compile Include="AgrProduceConditionService.cs" />
+    <Compile Include="AgrProductObjectGrowthInfoService.cs" />
+    <Compile Include="AreaStationDataInfoService.cs" />
+    <Compile Include="AreaStationService.cs" />
+    <Compile Include="AWProductService.cs" />
+    <Compile Include="AWProductTypeService.cs" />
+    <Compile Include="CacheStatistics\IStatistics.cs" />
+    <Compile Include="CacheStatistics\Statistics.cs" />
+    <Compile Include="CameraStationOnlineStatisticsService.cs" />
+    <Compile Include="CameraStationPicsService.cs" />
+    <Compile Include="CameraStationPresetPointService.cs" />
+    <Compile Include="CameraStationRunLogService.cs" />
+    <Compile Include="CameraStationsService.cs" />
+    <Compile Include="CompanyPicsService.cs" />
+    <Compile Include="CompanyService.cs" />
+    <Compile Include="CompanyUserService.cs" />
+    <Compile Include="Core\AutoMapperExtension.cs" />
+    <Compile Include="Core\BussinessBootStraper.cs" />
+    <Compile Include="Core\InitDataAttribute.cs" />
+    <Compile Include="Core\IService.cs" />
+    <Compile Include="Core\RedisKeyConf.cs" />
+    <Compile Include="Core\RedisSerializeType.cs" />
+    <Compile Include="Core\ServiceBase.cs" />
+    <Compile Include="DeviceControlCommandService.cs" />
+    <Compile Include="DeviceControlLogService.cs" />
+    <Compile Include="DeviceDataExceptionLogService.cs" />
+    <Compile Include="DeviceDataInfoService.cs" />
+    <Compile Include="DeviceExceptionSetService.cs" />
+    <Compile Include="DeviceRunLogService.cs" />
+    <Compile Include="DeviceRunLogTypeService.cs" />
+    <Compile Include="DeviceRunningStatisticsService.cs" />
+    <Compile Include="DeviceService.cs" />
+    <Compile Include="DeviceTimeSharingStatisticsService.cs" />
+    <Compile Include="DeviceTypeService.cs" />
+    <Compile Include="FacilityCameraPresetPointService.cs" />
+    <Compile Include="FacilityCameraRunLogService.cs" />
+    <Compile Include="FacilityCameraRunStatisticsService.cs" />
+    <Compile Include="FacilityCameraService.cs" />
+    <Compile Include="FacilityPicsService.cs" />
+    <Compile Include="FacilityProduceInfoService.cs" />
+    <Compile Include="FacilityService.cs" />
+    <Compile Include="FacilityTypeService.cs" />
+    <Compile Include="FarmService.cs" />
+    <Compile Include="Interface\IAgrDiagnosticInfoService.cs" />
+    <Compile Include="Interface\IAgrDiagnosticModelService.cs" />
+    <Compile Include="Interface\IAgrProduceAnniversaryService.cs" />
+    <Compile Include="Interface\IAgrProduceConditionService.cs" />
+    <Compile Include="Interface\IAgrProductObjectGrowthInfoService.cs" />
+    <Compile Include="Interface\IAgrProductObjectService.cs" />
+    <Compile Include="Interface\IAreaStationDataInfoService.cs" />
+    <Compile Include="Interface\IAreaStationService.cs" />
+    <Compile Include="Interface\IAWProductService.cs" />
+    <Compile Include="Interface\IAWProductTypeService.cs" />
+    <Compile Include="Interface\ICameraStationOnlineStatisticsService.cs" />
+    <Compile Include="Interface\ICameraStationPicsService.cs" />
+    <Compile Include="Interface\ICameraStationPresetPointService.cs" />
+    <Compile Include="Interface\ICameraStationRunLogService.cs" />
+    <Compile Include="Interface\ICameraStationsService.cs" />
+    <Compile Include="Interface\ICompanyPicsService.cs" />
+    <Compile Include="Interface\ICompanyService.cs" />
+    <Compile Include="Interface\ICompanyUserService.cs.cs" />
+    <Compile Include="Interface\IDeviceControlCommandService.cs" />
+    <Compile Include="Interface\IDeviceControlLogService.cs" />
+    <Compile Include="Interface\IDeviceDataExceptionLogService.cs" />
+    <Compile Include="Interface\IDeviceDataInfoService.cs" />
+    <Compile Include="Interface\IDeviceExceptionSetService.cs" />
+    <Compile Include="Interface\IDeviceRunLogService.cs" />
+    <Compile Include="Interface\IDeviceRunLogTypeService.cs" />
+    <Compile Include="Interface\IDeviceRunningStatisticsService.cs" />
+    <Compile Include="Interface\IDeviceService.cs" />
+    <Compile Include="Interface\IDeviceTimeSharingStatisticsService.cs" />
+    <Compile Include="Interface\IDeviceTypeService.cs" />
+    <Compile Include="Interface\IFacilityCameraPresetPointService.cs" />
+    <Compile Include="Interface\IFacilityCameraRunLogService.cs" />
+    <Compile Include="Interface\IFacilityCameraRunStatisticsService.cs" />
+    <Compile Include="Interface\IFacilityCameraService.cs" />
+    <Compile Include="Interface\IFacilityPicsService.cs" />
+    <Compile Include="Interface\IFacilityProduceInfoService.cs" />
+    <Compile Include="Interface\IFacilityService.cs" />
+    <Compile Include="Interface\IFacilityTypeService.cs" />
+    <Compile Include="Interface\IFarmService.cs" />
+    <Compile Include="Interface\IPictureRepService.cs" />
+    <Compile Include="Interface\ISysDepartmentService.cs" />
+    <Compile Include="Interface\ISysMenuService.cs" />
+    <Compile Include="Interface\ISysRoleMenuService.cs" />
+    <Compile Include="Interface\ISysUserService.cs" />
+    <Compile Include="Interface\ISysRoleService.cs" />
+    <Compile Include="Interface\ISysAreaService.cs" />
+    <Compile Include="Interface\IWeatherDeviceService.cs" />
+    <Compile Include="Interface\IWeatherDeviceTypeService.cs" />
+    <Compile Include="Interface\IWeatherStationOnlineStatisticsService.cs" />
+    <Compile Include="Interface\IWeatherStationService.cs" />
+    <Compile Include="PictureRepService.cs" />
+    <Compile Include="SysAreaService.cs" />
+    <Compile Include="SysDepartmentService.cs" />
+    <Compile Include="SysMenuService.cs" />
+    <Compile Include="SysRoleMenuService.cs" />
+    <Compile Include="SysRoleService.cs" />
+    <Compile Include="SysUserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeatherDeviceService.cs" />
+    <Compile Include="WeatherDeviceTypeService.cs" />
+    <Compile Include="WeatherStationOnlineStatisticsService.cs" />
+    <Compile Include="WeatherStationService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Fakes Include="Fakes\AhnqIot.Dto.fakes" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AhnqIot.Dto\AhnqIot.Dto.csproj">
+      <Project>{9a53e555-52d8-4101-ad45-ada2e0b7554d}</Project>
+      <Name>AhnqIot.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AhnqIot.Hxj.DbModel\AhnqIot.Hxj.DbModel.csproj">
+      <Project>{f9747f8e-497c-4b58-8526-586df68a47dd}</Project>
+      <Name>AhnqIot.Hxj.DbModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AhnqIot.Hxj.Repository\AhnqIot.Hxj.Repository.csproj">
+      <Project>{2a3c2611-c174-428e-8079-f57f67651ee5}</Project>
+      <Name>AhnqIot.Hxj.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AhnqIot.Infrastructure\AhnqIot.Infrastructure.csproj">
+      <Project>{9dcb9c9c-881f-457b-80e0-76054f75a9c9}</Project>
+      <Name>AhnqIot.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XFeng.Redis\Smart.Redis.csproj">
+      <Project>{fba6b322-def8-4819-bc0d-f98fd9273196}</Project>
+      <Name>Smart.Redis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExtendResource\AreaStation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExtendResource\WeatherDeviceType.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExtendResource\WeatherStation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExtendResource\安徽行政区域.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

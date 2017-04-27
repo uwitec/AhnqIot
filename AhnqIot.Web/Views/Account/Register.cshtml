@@ -1,0 +1,237 @@
+﻿@using AhnqIot.Web.Core.ConfigInfo
+@using AhnqIot.Bussiness.Interface;
+@{
+    Layout = null;
+    var list = @ViewBag.SysDepart;
+    var listrole = @ViewBag.SysRole;
+}
+
+
+<html>
+<head>
+    <title>@WebConfig.Current.SystemName-用户注册</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/css/pintuer.css" />
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/pintuer.js"></script>
+    <!--引入avalon之前必须引入jq-->
+
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/addjs.js"></script>
+    <style>
+        * {
+            margin-top:30px;
+            padding:0;
+        }
+        /*.container {
+            margin:0 auto;
+            width:600px;
+        }*/
+        body, a {
+            font-size: 14px;
+            color: #666;
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .fn-vhid {
+            visibility: hidden;
+        }
+
+        .fn-tinput {
+            width: 240px;
+            height: 30px;
+            line-height: 30px\9;
+            border: #ddd solid 1px;
+            background-color: transparent;
+            padding: 0 6px;
+        }
+
+        textarea {
+            border: #ddd solid 1px;
+            background-color: transparent;
+            width: 60%;
+        }
+
+            .fn-tinput:focus, textarea:focus {
+                border-color: #c00;
+            }
+
+        .bl-form label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            padding-top: 6px;
+        }
+
+        .bl-form .controls label {
+            width: auto;
+        }
+
+        .bl-form li {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        em {
+            color: #C00;
+        }
+
+        span.error {
+            color: #C00;
+            padding: 0 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="line">
+            <div class="xs6 xm4 xs3-move xm4-move">
+                <div class="media media-y">
+                    @*<a href="http://www.pintuer.com" target="_blank"><img src="@WebConfig.Current.UrlInfo.Logo" class="radius" alt="@WebConfig.Current.SystemName" /></a>*@
+                </div>
+
+                <form id="userform">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <strong>安徽省农业气象物联网服务平台注册页面</strong>
+                        </div>
+                        <div class="panel-body" style="padding: 30px;">
+
+                            <ul>
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="loginname" name="LoginName" class="fn-tinput" type="text" placeholder="请输入登录名" required data-msg-required="请填写登录名" data-msg-minlength="至少输入5个字符" />
+                                    </div>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="password" name="Password" class="fn-tinput" type="password" placeholder="请输入密码" required data-msg-required="请填写密码" data-msg-minlength="至少输入8个字符" />
+                                    </div>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="username" name="UserName" class="fn-tinput" type="text" placeholder="请输入用户名" required data-msg-required="请填写用户名" data-msg-minlength="至少输入5个字符" />
+                                    </div>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="qq" name="QQ" class="fn-tinput" type="text" placeholder="请输入qq号码" required data-rule-isQq="true" data-msg-required="请填写qq号" data-msg-minlength="最多输入10个字符" />
+                                    </div>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="email" name="Email" class="fn-tinput" type="text" placeholder="请填写Email" required data-rule-mail="true" data-msg-required="请填写Email" data-msg-minlength="最多输入10个字符" />
+                                    </div>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必选：</label>
+                                    <ul>
+                                        <li id="sysroleserialnum"  name="SysRoleSerialnum" style="width:212px;margin-left: 10px;" data-placeholder="请选择系统角色">
+                                            <select>
+                                                @foreach (var item in listrole)
+                                                {
+                                                    <option value="@item.Serialnum">@item.Name</option>
+                                                }
+                                            </select>
+                                    </ul>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必选：</label>
+                                    <ul>
+                                        <li id="sysdepartmentserialnum" name="SysDepartmentSerialnum" style="width:212px;margin-left: 10px;" data-placeholder="请选择机构名称">
+                                            <select>
+                                                @foreach (var item in list)
+                                                {
+                                                    <option value="@item.Serialnum">@item.Name</option>
+                                                }
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </li>
+                                @*<li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="copanyname" name="Name" class="fn-tinput" type="text" placeholder="请输入企业名称" required data-msg-required="请填写企业名称" data-msg-minlength="至少输入4个字符" />
+                                    </div>
+                                </li>
+
+                                <li class="bl-form-group">
+                                    <label><em>*</em>必填：</label>
+                                    <div class="controls">
+                                        <input id="farmname" name="FarmName" class="fn-tinput" type="text" placeholder="请输入基地名称" required data-msg-required="默认为企业添加基地" />
+                                    </div>
+                                </li>*@
+
+                                
+
+                            </ul>
+                        </div>
+                        <div class="panel-foot text-center">
+                            <a class="button button-block bg-blue text-big" id="register-click" style="cursor:pointer;text-align:center;">注 册</a>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        $(function () {
+
+            $("#register-click").on("click", function () {
+                if ($('#userform').valid()) {
+                    var param = convertToObject($("#userform"));
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        data: param,
+                        url: "/api/v1/sysuser/register",
+                        async: true,
+                        success: function (data) {
+                            var obj = JSON.parse(data);
+                            if (obj.success) {
+                                window.location.href = "/Account/Login";  //跳转到登录页
+                            }
+                            else {
+
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+
+        //将form表单转化成对象
+        function convertToObject($obj) {
+            var obj = {};
+            var arr = $obj.serializeArray();
+            $.each(arr, function (i, e) {
+                obj[e.name] = e.value;
+            });
+            return obj;
+        }
+    </script>
+</body>
+</html>

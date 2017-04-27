@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E0197ED-F96F-4F75-8FBA-9A0882A651BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartIot.Tool.DefaultServiceTool</RootNamespace>
+    <AssemblyName>SmartIot.Tool.DefaultServiceTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\IotClient\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tool.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NewLife.Core, Version=5.4.5656.32709, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\newlife\NewLife.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartIot.Tool.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SmarIot.Tool.Core\bin\Debug\SmartIot.Tool.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartIot.Tool.DefaultService.DB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SmarIot.Tool.DefaultService.DB\bin\Debug\SmartIot.Tool.DefaultService.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XCode, Version=8.18.5653.33041, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\newlife\XCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseConfig\FormShowDeviceTypeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FormShowDeviceTypeConfig.Designer.cs">
+      <DependentUpon>FormShowDeviceTypeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCameraConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCameraConfig.Designer.cs">
+      <DependentUpon>FrmCameraConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCameraPresetPointConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCameraPresetPointConfig.Designer.cs">
+      <DependentUpon>FrmCameraPresetPointConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCollectDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCollectDeviceConfig.Designer.cs">
+      <DependentUpon>FrmCollectDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCollectOrControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCollectOrControl.Designer.cs">
+      <DependentUpon>FrmCollectOrControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCommunicateDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCommunicateDeviceConfig.Designer.cs">
+      <DependentUpon>FrmCommunicateDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCommunicateDeviceTypeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmCommunicateDeviceTypeConfig.Designer.cs">
+      <DependentUpon>FrmCommunicateDeviceTypeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmControlDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmControlDeviceConfig.Designer.cs">
+      <DependentUpon>FrmControlDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmDeviceTypeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmDeviceTypeConfig.Designer.cs">
+      <DependentUpon>FrmDeviceTypeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmFacilityConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmFacilityConfig.Designer.cs">
+      <DependentUpon>FrmFacilityConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmFacilityTypeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmFacilityTypeConfig.Designer.cs">
+      <DependentUpon>FrmFacilityTypeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmFarmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmFarmEdit.Designer.cs">
+      <DependentUpon>FrmFarmEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmModularDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmModularDeviceConfig.Designer.cs">
+      <DependentUpon>FrmModularDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmParmeterConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmParmeterConfig.Designer.cs">
+      <DependentUpon>FrmParmeterConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmProtocalTypeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmProtocalTypeConfig.Designer.cs">
+      <DependentUpon>FrmProtocalTypeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmSensorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmSensorConfig.Designer.cs">
+      <DependentUpon>FrmSensorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmSetting.Designer.cs">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmShowDataConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmShowDataConfig.Designer.cs">
+      <DependentUpon>FrmShowDataConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseConfig\FrmShowDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseConfig\FrmShowDeviceConfig.Designer.cs">
+      <DependentUpon>FrmShowDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FormHelper.cs" />
+    <Compile Include="Common\FrmSystemFunctionMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmSystemFunctionMap.Designer.cs">
+      <DependentUpon>FrmSystemFunctionMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\ValidateControls.cs" />
+    <Compile Include="Data\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FrmDeviceControlCommand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmDeviceControlCommand.Designer.cs">
+      <DependentUpon>FrmDeviceControlCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FrmDeviceControlLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmDeviceControlLog.Designer.cs">
+      <DependentUpon>FrmDeviceControlLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FrmDeviceData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmDeviceData.Designer.cs">
+      <DependentUpon>FrmDeviceData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FrmDeviceDataExceptionLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmDeviceDataExceptionLog.Designer.cs">
+      <DependentUpon>FrmDeviceDataExceptionLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FrmSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmSMS.Designer.cs">
+      <DependentUpon>FrmSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FrmTimeSharingStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FrmTimeSharingStatistics.Designer.cs">
+      <DependentUpon>FrmTimeSharingStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseConfig\FormShowDeviceTypeConfig.resx">
+      <DependentUpon>FormShowDeviceTypeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmCameraConfig.resx">
+      <DependentUpon>FrmCameraConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmCameraPresetPointConfig.resx">
+      <DependentUpon>FrmCameraPresetPointConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmCollectDeviceConfig.resx">
+      <DependentUpon>FrmCollectDeviceConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmCollectOrControl.resx">
+      <DependentUpon>FrmCollectOrControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmCommunicateDeviceConfig.resx">
+      <DependentUpon>FrmCommunicateDeviceConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmCommunicateDeviceTypeConfig.resx">
+      <DependentUpon>FrmCommunicateDeviceTypeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmControlDeviceConfig.resx">
+      <DependentUpon>FrmControlDeviceConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmDeviceTypeConfig.resx">
+      <DependentUpon>FrmDeviceTypeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmFacilityConfig.resx">
+      <DependentUpon>FrmFacilityConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmFacilityTypeConfig.resx">
+      <DependentUpon>FrmFacilityTypeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmFarmEdit.resx">
+      <DependentUpon>FrmFarmEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmModularDeviceConfig.resx">
+      <DependentUpon>FrmModularDeviceConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmParmeterConfig.resx">
+      <DependentUpon>FrmParmeterConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmProtocalTypeConfig.resx">
+      <DependentUpon>FrmProtocalTypeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmSensorConfig.resx">
+      <DependentUpon>FrmSensorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmSetting.resx">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmShowDataConfig.resx">
+      <DependentUpon>FrmShowDataConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseConfig\FrmShowDeviceConfig.resx">
+      <DependentUpon>FrmShowDeviceConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FrmSystemFunctionMap.resx">
+      <DependentUpon>FrmSystemFunctionMap.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FrmDeviceControlCommand.resx">
+      <DependentUpon>FrmDeviceControlCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FrmDeviceControlLog.resx">
+      <DependentUpon>FrmDeviceControlLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FrmDeviceData.resx">
+      <DependentUpon>FrmDeviceData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FrmDeviceDataExceptionLog.resx">
+      <DependentUpon>FrmDeviceDataExceptionLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FrmSMS.resx">
+      <DependentUpon>FrmSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FrmTimeSharingStatistics.resx">
+      <DependentUpon>FrmTimeSharingStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\0.png" />
+    <Content Include="img\1.png" />
+    <Content Include="tool.ico" />
+    <EmbeddedResource Include="img\16x58PICIAK_1024.jpg" />
+    <Content Include="img\2.png" />
+    <Content Include="img\3.png" />
+    <Content Include="img\Administrative Tools .png" />
+    <Content Include="img\agt_stop.ico" />
+    <Content Include="img\agt_stop.png" />
+    <Content Include="img\applications-system.ico" />
+    <Content Include="img\applications-system.png" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\compact_flash_mount.png" />
+    <Content Include="img\doubt.ico" />
+    <Content Include="img\doubt.png" />
+    <Content Include="img\feed-6.ico" />
+    <Content Include="img\feed-6.png" />
+    <Content Include="img\FirstPag.jpg" />
+    <Content Include="img\forms.png" />
+    <Content Include="img\gnome-monitor-1.png" />
+    <Content Include="img\gnome-network-preferences.ico" />
+    <Content Include="img\gnome-network-preferences.png" />
+    <Content Include="img\Help_Circle_Blue-4.ico" />
+    <Content Include="img\Help_Circle_Blue-4.png" />
+    <Content Include="img\Home-64.png" />
+    <Content Include="img\ico\about.jpg" />
+    <Content Include="img\ico\LED显卡配置.png" />
+    <Content Include="img\ico\传感器编辑.png" />
+    <Content Include="img\ico\修改密码.png" />
+    <Content Include="img\ico\关于.png" />
+    <Content Include="img\ico\关闭.png" />
+    <Content Include="img\ico\其它配置.png" />
+    <Content Include="img\ico\刷新.png" />
+    <Content Include="img\ico\协议测试工具.png" />
+    <Content Include="img\ico\协议类型编辑.png" />
+    <Content Include="img\ico\基地配置1.png" />
+    <Content Include="img\ico\基地配置2.png" />
+    <Content Include="img\ico\导出设备清单.png" />
+    <Content Include="img\ico\数据导入.png" />
+    <Content Include="img\ico\温湿光.png" />
+    <Content Include="img\ico\生成测试数据.png" />
+    <Content Include="img\ico\获取控制命令.png" />
+    <Content Include="img\ico\计算器.png" />
+    <Content Include="img\ico\记事本.png" />
+    <Content Include="img\ico\设备状态查询.png" />
+    <Content Include="img\ico\设备类型配置.png" />
+    <Content Include="img\ico\设备精灵登录_03.jpg" />
+    <Content Include="img\ico\设备编辑.png" />
+    <Content Include="img\ico\设备设施导入.png" />
+    <Content Include="img\ico\设施类型配置.png" />
+    <Content Include="img\ico\设施编辑.png" />
+    <Content Include="img\ico\采集关闭.png" />
+    <Content Include="img\ico\采集开启.png" />
+    <Content Include="img\ico\重新登录.png" />
+    <Content Include="img\kfm_home-7.png" />
+    <Content Include="img\kget_list.ico" />
+    <Content Include="img\kget_list.png" />
+    <Content Include="img\messagebox_info-1.png" />
+    <Content Include="img\pic.ico" />
+    <Content Include="img\pltembackgroud.jpg" />
+    <Content Include="img\Search-44.png" />
+    <Content Include="img\Setting.png" />
+    <Content Include="img\StepForwardNormalBlue.png" />
+    <Content Include="img\Stop1NormalBlue.png" />
+    <Content Include="img\system-software-update-3.png" />
+    <Content Include="img\text-x-license.ico" />
+    <Content Include="img\text-x-license.png" />
+    <Content Include="img\uplevel_no_text.png" />
+    <Content Include="img\Upload File.png" />
+    <Content Include="img\Upload.png" />
+    <Content Include="img\Utilities-2.png" />
+    <Content Include="img\瀚之显.ico" />
+    <Content Include="img\瀚之显.png" />
+    <Content Include="img\瀚之显图标.jpg" />
+    <Content Include="img\瀚之显图标1.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
