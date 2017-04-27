@@ -4,7 +4,7 @@
 // FILENAME   ： ApiService.cs
 // AUTHOR     ： soft-cq
 // CREATE TIME： 2015-07-31 14:08
-// COPYRIGHT  ： 版权所有 (C) 安徽斯玛特物联网科技有限公司 http://www.smartah.cc/ 2011~2015
+// COPYRIGHT  ： 版权所有 (C) 物联网科技有限公司 http://www.smartah.cc/ 2011~2015
 #endregion
 
 using XAgent;
@@ -16,7 +16,7 @@ namespace SmartIot.API.Container
     {
 
         /// <summary>显示名字</summary>
-        public override string DisplayName { get { return "安徽斯玛特物联网数据中心工作组件"; } }
+        public override string DisplayName { get { return "物联网数据中心工作组件"; } }
 
         /// <summary>容器线程数，根据插件数动态调整</summary>
         public override int ThreadCount { get { return JobHelper.Works.Count; } }

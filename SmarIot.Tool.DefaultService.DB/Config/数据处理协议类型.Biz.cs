@@ -114,7 +114,7 @@ namespace SmartIot.Tool.DefaultService.DB
                 XTrace.WriteLine("开始初始化{0}[{1}]数据……", typeof (TEntity).Name, Meta.Table.DataTable.DisplayName);
 
             AddType("Modbus", "Modbus工业级标准协议");
-            AddType("Modbus-SmartIot", "斯玛特物联网Modbus协议");
+            AddType("Modbus-SmartIot", "物联网Modbus协议");
             AddType("Modbus-XPH", "新普惠Modbus协议");
             AddType("LED-YX-YTP", "圆心LED图文控制卡协议");
             AddType("LED-LX", "灵信LED通讯协议");

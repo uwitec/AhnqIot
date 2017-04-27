@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("AhnqIot.EF")]
-[assembly: AssemblyDescription("安徽农业气象物联网V3数据库访问层")]
+[assembly: AssemblyDescription("农业气象物联网V3数据库访问层")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("安徽斯玛特物联网科技有限公司")]
+[assembly: AssemblyCompany("物联网科技有限公司")]
 [assembly: AssemblyProduct("AhnqIot.EF")]
-[assembly: AssemblyCopyright("Copyright ©安徽斯玛特物联网科技有限公司  2016")]
+[assembly: AssemblyCopyright("Copyright ©物联网科技有限公司  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

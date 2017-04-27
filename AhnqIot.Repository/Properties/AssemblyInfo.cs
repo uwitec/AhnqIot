@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AhnqIot.Repository")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("安徽斯玛特物联网科技有限公司")]
+[assembly: AssemblyCompany("物联网科技有限公司")]
 [assembly: AssemblyProduct("AhnqIot.Repository")]
-[assembly: AssemblyCopyright("Copyright ©安徽斯玛特物联网科技有限公司  2016")]
+[assembly: AssemblyCopyright("Copyright ©物联网科技有限公司  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

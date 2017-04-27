@@ -1,11 +1,11 @@
 #region Code File Comment
 
-// SOLUTION   ： 安徽农业气象物联网V3
+// SOLUTION   ： 农业气象物联网V3
 // PROJECT    ： AhnqIot.Repository
 // FILENAME   ： IRepositoryBase.cs
 // AUTHOR     ： soft-cq
 // CREATE TIME： 2016-01-13 15:06
-// COPYRIGHT  ： 版权所有 (C) 安徽斯玛特物联网科技有限公司 http://www.smartah.cc/ 2011~2016
+// COPYRIGHT  ： 版权所有 (C) 物联网科技有限公司 http://www.smartah.cc/ 2011~2016
 
 #endregion
 

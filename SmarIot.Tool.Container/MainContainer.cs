@@ -8,9 +8,9 @@ namespace SmartIot.Tool.Container
     public class MainContainer : AgentServiceBase<MainContainer>
     {
         /// <summary>显示名字</summary>
-        public override string DisplayName => "安徽斯玛特物联网服务";
+        public override string DisplayName => "物联网服务";
 
-        //public override string DisplayName { get { return "斯玛特智慧农业系统软件 V1.0"; } }
+        //public override string DisplayName { get { return "智慧农业系统软件 V1.0"; } }
 
         /// <summary>容器线程数，根据插件数动态调整</summary>
         public override int ThreadCount

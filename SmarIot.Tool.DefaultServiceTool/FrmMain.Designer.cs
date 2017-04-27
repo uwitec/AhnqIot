@@ -143,7 +143,7 @@
             this.toolStripStatusLabel3.IsLink = true;
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(219, 20);
-            this.toolStripStatusLabel3.Text = "安徽斯玛特物联网科技有限公司";
+            this.toolStripStatusLabel3.Text = "物联网科技有限公司";
             // 
             // menuStrip2
             // 

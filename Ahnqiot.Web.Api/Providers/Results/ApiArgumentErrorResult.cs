@@ -1,9 +1,9 @@
-﻿//  SOLUTION  ： 安徽农业气象物联网V3
+﻿//  SOLUTION  ： 农业气象物联网V3
 //  PROJECT     ： Ahnqiot.Web.Api
 //  FILENAME   ： ApiArgumentErrorResult.cs
 //  AUTHOR     ： soft-cq
 //  CREATE TIME： 19:06
-//  COPYRIGHT  ： 版权所有 (C) 安徽斯玛特物联网科技有限公司 http://www.smartah.cc/ 2011~2016
+//  COPYRIGHT  ： 版权所有 (C) 物联网科技有限公司 http://www.smartah.cc/ 2011~2016
 
 using System;
 using AhnqIot.Infrastructure.Log;

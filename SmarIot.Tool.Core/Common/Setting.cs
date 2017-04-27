@@ -5,7 +5,7 @@
 // FILENAME   ： Setting.cs
 // AUTHOR     ： soft-cq
 // CREATE TIME： 2015-10-02 18:59
-// COPYRIGHT  ： 版权所有 (C) 安徽斯玛特物联网科技有限公司 http://www.smartah.cc/ 2011~2015
+// COPYRIGHT  ： 版权所有 (C) 物联网科技有限公司 http://www.smartah.cc/ 2011~2015
 
 #endregion Code File Comment
 
@@ -31,7 +31,7 @@ namespace SmartIot.Tool.Core.Common
 
         protected override void OnNew()
         {
-            SystemName = "安徽斯玛特物联网监控系统";
+            SystemName = "物联网监控系统";
             LastUpdateTime = new DateTime(2015, 10, 1);
 
             CollectEnable = true;

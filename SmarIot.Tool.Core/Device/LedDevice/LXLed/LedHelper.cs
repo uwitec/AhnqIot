@@ -93,18 +93,18 @@ namespace SmartIot.Tool.Core.Device.LedDevice.LXLed
         }
 
         /// <summary>
-        /// 添加显示斯玛特信息节目
+        /// 添加显示信息节目
         /// </summary>
         private void AddSmartParagram()
         {
             var r1 = Led2014.AddProgram(_ledSessionHandle, _smartProgramIndex, 0);
             if (r1 == 0)
             {
-                throw new Exception("添加斯玛特节目失败");
+                throw new Exception("添加节目失败");
             }
             var r2 = Led2014.AddQuitText(_ledSessionHandle, _smartProgramIndex, 1, 0, 0, LedWidth, LedHeight,
                 (int) FontColor.Green, "宋体",
-                24, 0, 0, 0, "斯玛特物联网");
+                24, 0, 0, 0, "物联网");
             if (r2 == 0)
             {
                 throw new Exception("时间节目添加玛特节目失败");
@@ -160,7 +160,7 @@ namespace SmartIot.Tool.Core.Device.LedDevice.LXLed
 
             ////int pno = _timeProgramIndex + 1;
             ////Led2014.AddProgram(_ledSessionHandle, pno, 5);
-            ////Led2014.AddNeiMaTxtArea1(_ledSessionHandle, 1, pno, 1, 0, 0, LedWidth, LedHeight, "斯玛特物联网一二三四五六七", 32/*点阵*/, 0/*宋体*/, 1/*颜色*/, 32/*连续左移*/, 255, 8, 20);
+            ////Led2014.AddNeiMaTxtArea1(_ledSessionHandle, 1, pno, 1, 0, 0, LedWidth, LedHeight, "物联网一二三四五六七", 32/*点阵*/, 0/*宋体*/, 1/*颜色*/, 32/*连续左移*/, 255, 8, 20);
 
             //发送
             var r3 = Led2014.SendControl(_ledSessionHandle, 1, IntPtr.Zero);

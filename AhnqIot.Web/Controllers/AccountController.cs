@@ -1,11 +1,11 @@
 ﻿#region Code File Comment
 
-// SOLUTION   ： 安徽农业气象物联网V3
+// SOLUTION   ： 农业气象物联网V3
 // PROJECT    ： AhnqIot.Web
 // FILENAME   ： AccountController.cs
 // AUTHOR     ： soft-cq
 // CREATE TIME： 2016-01-15 15:52
-// COPYRIGHT  ： 版权所有 (C) 安徽斯玛特物联网科技有限公司 http://www.smartah.cc/ 2011~2015
+// COPYRIGHT  ： 版权所有 (C) 物联网科技有限公司 http://www.smartah.cc/ 2011~2015
 
 #endregion
 
@@ -237,7 +237,7 @@ namespace AhnqIot.Web.Controllers
             var user = new IotUser();
             user.Id = Guid.NewGuid().ToString();
             user.UserName = "ahnqiot";
-            user.NickName = "安徽农业气象物联网";
+            user.NickName = "农业气象物联网";
 
             //Context
             var owinContext = HttpContext.GetOwinContext();

@@ -9486,7 +9486,7 @@ namespace SmartIot.Service.Hikvision
 
         public enum PROVINCE_CITY_IDX
         {
-	        ANHUI_PROVINCE             = 0,              //安徽
+	        ANHUI_PROVINCE             = 0,              //
 	        AOMEN_PROVINCE             = 1,              //澳门
 	        BEIJING_PROVINCE           = 2,              //北京
 	        CHONGQING_PROVINCE         = 3,              //重庆

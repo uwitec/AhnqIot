@@ -150,7 +150,7 @@ namespace SmartIot.Tool.DefaultServiceTool
             //FormHelper.CreateForm<FrmSystemFunctionMap>();
             this.Text = Setting.Current.SystemName + "管理工具";
             //NewLife.Configuration.Config.GetConfig<String>("SystemName", "物联网监控系统设备管理工具");
-            //this.Text = "斯玛特智慧农业系统软件 V1.0";
+            //this.Text = "智慧农业系统软件 V1.0";
             //toolStripStatusLabel3.Text = "铜陵县水产开发总公司";
             InitTreeView(); //加载树结构
         }

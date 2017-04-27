@@ -1,10 +1,10 @@
 ﻿#region Code File Comment
-// SOLUTION   ： 安徽农业气象物联网V3
+// SOLUTION   ： 农业气象物联网V3
 // PROJECT    ： AhnqIot.Bussiness
 // FILENAME   ： SysDepartmentService.cs
 // AUTHOR     ： soft-cq
 // CREATE TIME： 2016-01-14 0:10
-// COPYRIGHT  ： 版权所有 (C) 安徽斯玛特物联网科技有限公司 http://www.smartah.cc/ 2011~2015
+// COPYRIGHT  ： 版权所有 (C) 物联网科技有限公司 http://www.smartah.cc/ 2011~2015
 #endregion
 
 using System;
@@ -76,7 +76,7 @@ namespace AhnqIot.Bussiness
         /// <returns></returns>
         public async void ImportFromText()
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, NewLife.Runtime.IsWeb ? "bin" : "", "ExtendResource", "安徽行政区域.txt");
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, NewLife.Runtime.IsWeb ? "bin" : "", "ExtendResource", "行政区域.txt");
             if (File.Exists(path))
             {
                 LogHelper.Info("从文件导入系统机构信息");
